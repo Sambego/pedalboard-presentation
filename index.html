@@ -74,14 +74,14 @@
                     <h2>Pedalboard</h2>
 
                     <ul>    
-                        <li>Get sound trough <pre class="inline">window.getUserMedia()</pre></li>
-                        <li>Alter sounds trough the web-audio-api</li>
-                        <li>Controll all of this trough the web-midi-api</li>
+                        <li>Access the microphone with <pre class="inline">window.getUserMedia()</pre></li>
+                        <li>Alter sounds with the web-audio-api</li>
+                        <li>Controll all of this with the web-midi-api</li>
                     </ul>
                 </section>
 
                 <section>               
-                    <h2>Get the users microphone sound</h2>
+                    <h2>Get the user's microphone sound</h2>
 
                     <pre><code class="hljs JavaScript" data-trim contenteditable>
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ...;
@@ -99,7 +99,7 @@ navigator.getUserMedia({
                 <section>               
                     <h2>Add effects to the guitar sound</h2>
 
-                    <p>Start by creating a new audio-context</p>
+                    <p>Start by creating a new audio-context.</p>
 
                     <pre><code class="hljs JavaScript" data-trim contenteditable>
 var audioContext = new AudioContext();
@@ -107,7 +107,7 @@ var audioContext = new AudioContext();
                 </section>
 
                 <section>               
-                    <h2>Create out basic sound chain</h2>
+                    <h2>Create our basic sound chain</h2>
 
                     <p>The sound signal is passed from node to node, untill it reaches the last one.</p>
 
@@ -122,7 +122,7 @@ var inputNode = audioContext.createMediaStreamSource(stream);
 
                     <pre><code class="hljs JavaScript" data-trim contenteditable>
 var gainNode = audioContext.createGain();
-    gainNode.gain.value = .5; // The actual value of the volume
+    gainNode.gain.value = .5; // The volume is 50%
 
 inputNode.connect(gainNode);
 gainNode.connect(audioContext.destination);
@@ -141,7 +141,7 @@ inputNode.connect(waveShaperNode);
 waveShaperNode.connect(audioContext.destination);
                     </code></pre>
 
-                    <p>An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a></p>
+                    <p>An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a>.</p>
                 </section>
 
                 <section>               
@@ -213,13 +213,13 @@ convolverNode.connect(audioContext.destination);
                 </section>
 
                 <section>               
-                    <h2>Using the web-midi-api to communicate with external hardware.</h2>
+                    <h2>Using the web-midi-api to communicate with external hardware</h2>
 
                     <pre><code class="hljs JavaScript" data-trim contenteditable>
 navigator.requestMIDIAccess().then(function(midi) {
     var inputs = midi.inputs.values(),
-        i = null,
-        devices = [];
+        devices = [],
+        i;
 
     for (i = inputs.next(); i && !i.done; i = inputs.next()) {
         devices.push(i.value);
