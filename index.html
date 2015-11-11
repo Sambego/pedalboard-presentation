@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Web-audio</title>
+
+        <meta name="description" content="Using the web-audio-api and web-midi-api to create interactive guitar effects">
+        <meta name="author" content="Sam Bellen">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/sam.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/github.css">
+
+        <!-- Quicksand -->
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+
+        <!-- Font-awsesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="js-waveform waveform"></div>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Web-audio-api</h1>
+                </section>
+
+                <section>               
+                    <h2>Sam Bellen</h2>
+
+                    <ul>    
+                        <li>Front-end developer</li>
+                        <li>Kunstmaan</li>
+                        <li>@sambego</li>
+                        <li>github.com/sambego</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <div class="instagram">
+                        <blockquote class="instagram-media" data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://instagram.com/p/z13H6WiPD1/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Een foto die is geplaatst door Sam Bellen (@sambego)</a> op <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-05T09:49:33+00:00">5 Mrt 2015 om 1:49 PST</time></p></div></blockquote>
+                        <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+                    </div>
+                </section>
+
+                <section>               
+                    <h2>Pedalboard</h2>
+
+                    <ul>    
+                        <li>Get sound trough <pre class="inline">window.getUserMedia()</pre></li>
+                        <li>Alter sounds trough the web-audio-api</li>
+                        <li>Controll all of this trough the web-midi-api</li>
+                    </ul>
+                </section>
+
+                <section>               
+                    <h2>Get the users microphone sound</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ...;
+
+navigator.getUserMedia({
+    audio: true
+}, function(stream) {
+    // Do something with the sound.
+}, function() {
+    // Errors, gotta catch 'em all!
+});
+                    </code></pre>
+                </section>
+
+                <section>               
+                    <h2>Add effects to the guitar sound</h2>
+
+                    <p>Start by creating a new audio-context</p>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var audioContext = new AudioContext();
+                    </code></pre>
+                </section>
+
+                <section>               
+                    <h2>Create out basic sound chain</h2>
+
+                    <p>The sound signal is passed from node to node, untill it reaches the last one.</p>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var inputNode = audioContext.createMediaStreamSource(stream);
+    inputNode.connect(audioContext.destination); 
+                    </code></pre>
+                </section>
+
+                <section>               
+                    <h2>Volume pedal</h2>
+
+                    <p>We can alter the volume of the sound signal with a gain-node.</p>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var gainNode = audioContext.createGain();
+    gainNode.gain.value = .5; // The actual value of the volume
+
+inputNode.connect(gainNode);
+gainNode.connect(audioContext.destination);
+                    </code></pre>
+                </section>
+
+                <section>               
+                    <h2>Distortion pedal</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var waveShaperNode = audioContext.createWaveShaper();
+    waveShaperNode.oversample = '4x'; 
+    waveShaperNode.curve = fancyMathToCalculateCurve();
+
+inputNode.connect(waveShaperNode);
+waveShaperNode.connect(audioContext.destination);
+                    </code></pre>
+
+                    <p>An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a></p>
+                </section>
+
+                <section>               
+                    <h2>Delay pedal</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var delayNode = audioContext.createDelay();
+    delayNode.delayTime.value = 1; // 1 second delay
+
+inputNode.connect(delayNode);
+delayNode.connect(audioContext.destination);
+                    </code></pre>
+                </section>
+
+                <section>               
+                    <h2>Flanger pedal</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var oscilatorNode = audioContext.createOscillator();
+    oscilatorNode.type = 'sine';
+    oscilatorNode.frequency.value = 1000; // 1000Hz
+
+inputNode.connect(oscilatorNode);
+oscilatorNode.connect(audioContext.destination);
+                    </code></pre>
+                </section>
+
+                <section>               
+                    <h2>Reverb pedal</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+// The audio stream is just a stream of an audio file (hall_reverb.ogg)
+
+var buffer;
+audioContext.decodeAudioData(audioStream.data, function(buffer) {
+    buffer = buffer
+};
+
+var convolverNode = audioContext.createConvolver();
+    convolverNode.buffer = buffer;
+
+inputNode.connect(convolverNode);
+convolverNode.connect(audioContext.destination);
+                    </code></pre>
+
+                    <p>Impulse response file by <a href="https://github.com/cwilso/WebAudio">Chris Wilson</a></p>
+                </section>
+
+                <section>               
+                    <h2>Other nodes</h2>
+
+                    <ul>
+                        <li>AnalyserNode</li>
+                        <li>BiquadFilterNode</li>
+                        <li>ChannelSplitterNode</li>
+                        <li>ChannelMergerNode</li>
+                        <li>PannerNode</li>
+                        <li>DynamicsCompressorNode</li>
+                        <li>...</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1><a href="http://0.0.0.0:9000/" target="_blank">Test test, one two, test</a></h1>
+                </section>
+
+                <section>
+                    <h1>web-midi-api</h1>
+                </section>
+
+                <section>               
+                    <h2>Using the web-midi-api to communicate with external hardware.</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+navigator.requestMIDIAccess().then(function(midi) {
+    var inputs = midi.inputs.values(),
+        i = null,
+        devices = [];
+
+    for (i = inputs.next(); i && !i.done; i = inputs.next()) {
+        devices.push(i.value);
+    }
+
+    devices[0].onmidimessage = function(message) {
+        // Incomming message from the midi-device
+    };
+});
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h1>Thank you!</h1>
+                </section>
+            </div>
+
+            <footer class="footer">
+                <a href="https://twitter.com/sambego" class="link link--twitter"><i class="fa fa-twitter"></i> @sambego</a>
+                <a href="https://github.com/sambego" class="link link--github"><i class="fa fa-github"></i> Sambego</a>
+            </footer>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script src="js/waveform.js"></script>
+
+        <script>
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+
+            Reveal.addEventListener('ready', function(event) {
+                document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
+            });
+
+            Reveal.addEventListener('slidechanged', function(event) {
+                document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
+            });
+
+        </script>
+    </body>
+</html>

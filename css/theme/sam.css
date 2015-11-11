@@ -1,0 +1,150 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	color: #fff;
+}
+
+.controls {
+	display: none;
+}
+
+.reveal {
+	background: #16a085;
+}
+
+/* Typo */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6,
+.reveal p,
+.reveal a {
+	font-family: 'Quicksand', sans-serif;
+}
+
+.reveal h1,
+.reveal h2 {
+	font-size: 4rem;
+	text-transform: uppercase;
+}
+
+.reveal h2 {
+	padding-bottom: 1rem;
+
+	border-bottom: 2px solid #fff;
+
+	text-align: left	
+}
+
+.reveal h2 + * {
+	margin-top: 4rem;
+}
+
+.reveal p {
+	margin-bottom: 1rem;
+
+	font-size: 1.5rem;
+	text-align: left;
+}
+
+.reveal a {
+	color: #fff;
+
+	border-bottom: 1px solid #fff;
+
+	text-decoration: none;
+}
+
+.reveal ul {
+	margin-left: 2rem;
+
+	font-family: 'Quicksand', sans-serif;
+	text-align: left;
+}
+
+.reveal li {
+	margin-bottom: 1rem;
+	font-size: 2rem;
+}
+
+.reveal pre {
+	border-radius: 5px;
+
+	font-family: courier;
+}
+
+.reveal pre.inline {
+	display: inline-block;
+	padding: .2rem;
+	
+	background: #fff;
+
+	color: #000;
+}
+
+.reveal code {
+	margin-bottom: 1.5rem;
+	padding: 1rem;
+
+	font-size: 1.4rem;
+	text-align: left;
+}
+
+/* Links */
+.reveal .link {
+	border: none;
+
+	color: #fff;
+	font-size: 1rem;
+
+	text-decoration: none;
+}
+
+.reveal .link:hover {
+	text-decoration: none;	
+}
+
+.reveal .link--twitter {
+	float: left;
+}
+
+.reveal .link--github {
+	float: right;
+}
+
+/* Footer */ 
+.reveal .footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	clear: both;
+
+	padding: 1rem;
+
+	background: rgba(0, 0, 0, .1);
+}
+
+/* Waveform */
+.waveform {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	z-index: 2;
+
+	margin-top: -200px;
+}
+
+.waveform__path {
+	fill: none;
+
+	stroke: rgba(255, 255, 255, .4);
+	stroke-width: 4px;
+}
+
+.reveal .instagram {
+	width: 50%;
+	margin: 0 auto;
+}
