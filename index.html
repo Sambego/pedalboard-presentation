@@ -120,8 +120,6 @@ var inputNode = audioContext.createMediaStreamSource(stream);
                 <section>               
                     <h2>Volume pedal</h2>
 
-                    <p>We can alter the volume of the sound signal with a gain-node.</p>
-
                     <pre><code class="hljs JavaScript" data-trim contenteditable>
 var gainNode = audioContext.createGain();
     gainNode.gain.value = .5; // The actual value of the volume
@@ -162,12 +160,12 @@ delayNode.connect(audioContext.destination);
                     <h2>Flanger pedal</h2>
 
                     <pre><code class="hljs JavaScript" data-trim contenteditable>
-var oscilatorNode = audioContext.createOscillator();
-    oscilatorNode.type = 'sine';
-    oscilatorNode.frequency.value = 1000; // 1000Hz
+var oscillatorNode = audioContext.createOscillator();
+    oscillatorNode.type = 'sine';
+    oscillatorNode.frequency.value = 1000; // 1000Hz
 
-inputNode.connect(oscilatorNode);
-oscilatorNode.connect(audioContext.destination);
+inputNode.connect(oscillatorNode);
+oscillatorNode.connect(audioContext.destination);
                     </code></pre>
                 </section>
 
