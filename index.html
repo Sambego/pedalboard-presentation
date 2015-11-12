@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="css/theme/sam.css" id="theme">
 
         <!-- Code syntax highlighting -->
-        <link rel="stylesheet" href="lib/css/github.css">
+        <link rel="stylesheet" href="plugin/prism/prism.css">
 
         <!-- Quicksand -->
         <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
@@ -52,10 +52,10 @@
                     <h1>Web-audio-api</h1>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Sam Bellen</h2>
 
-                    <ul>    
+                    <ul>
                         <li>Front-end developer</li>
                         <li>Kunstmaan</li>
                         <li>@sambego</li>
@@ -70,21 +70,20 @@
                     </div>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Pedalboard</h2>
 
-                    <ul>    
+                    <ul>
                         <li>Access the microphone with <pre class="inline">window.getUserMedia()</pre></li>
                         <li>Alter sounds with the web-audio-api</li>
                         <li>Controll all of this with the web-midi-api</li>
                     </ul>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Get the user's microphone sound</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ...;
+                    <pre><code class="language-javascript">navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ...;
 
 navigator.getUserMedia({
     audio: true
@@ -93,87 +92,84 @@ navigator.getUserMedia({
 }, function() {
     // Errors, gotta catch 'em all!
 });
-                    </code></pre>
+</code></pre>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Add effects to the guitar sound</h2>
 
                     <p>Start by creating a new audio-context.</p>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var audioContext = new AudioContext();
-                    </code></pre>
+                    <pre><code class="language-javascript">var audioContext = new AudioContext();</code></pre>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Create our basic sound chain</h2>
 
                     <p>The sound signal is passed from node to node, untill it reaches the last one.</p>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var inputNode = audioContext.createMediaStreamSource(stream);
-    inputNode.connect(audioContext.destination); 
-                    </code></pre>
+                    <pre><code class="language-javascript">var inputNode = audioContext.createMediaStreamSource(stream);
+    inputNode.connect(audioContext.destination);</code></pre>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Volume pedal</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var gainNode = audioContext.createGain();
+                    <pre><code class="language-javascript">var gainNode = audioContext.createGain();
     gainNode.gain.value = .5; // The volume is 50%
 
 inputNode.connect(gainNode);
-gainNode.connect(audioContext.destination);
-                    </code></pre>
+gainNode.connect(audioContext.destination);</code></pre>
                 </section>
 
-                <section>               
+                <section>
+                    <h2>Gain Node node</h2>
+                    <div class="js-audio-playground--gain audio-playground"></div>
+                </section>
+
+                <section>
                     <h2>Distortion pedal</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var waveShaperNode = audioContext.createWaveShaper();
-    waveShaperNode.oversample = '4x'; 
+                    <pre><code class="language-javascript">var waveShaperNode = audioContext.createWaveShaper();
+    waveShaperNode.oversample = '4x';
     waveShaperNode.curve = fancyMathToCalculateCurve();
 
 inputNode.connect(waveShaperNode);
-waveShaperNode.connect(audioContext.destination);
-                    </code></pre>
+waveShaperNode.connect(audioContext.destination);</code></pre>
 
                     <p>An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a>.</p>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Delay pedal</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var delayNode = audioContext.createDelay();
+                    <pre><code class="language-javascript">var delayNode = audioContext.createDelay();
     delayNode.delayTime.value = 1; // 1 second delay
 
 inputNode.connect(delayNode);
-delayNode.connect(audioContext.destination);
-                    </code></pre>
+delayNode.connect(audioContext.destination);</code></pre>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Flanger pedal</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var oscillatorNode = audioContext.createOscillator();
+                    <pre><code class="language-javascript">var oscillatorNode = audioContext.createOscillator();
     oscillatorNode.type = 'sine';
     oscillatorNode.frequency.value = 1000; // 1000Hz
 
 inputNode.connect(oscillatorNode);
-oscillatorNode.connect(audioContext.destination);
-                    </code></pre>
+oscillatorNode.connect(audioContext.destination);</code></pre>
                 </section>
 
-                <section>               
+                <section>
+                    <h2>Oscillator node</h2>
+                    <div class="js-audio-playground--oscillator audio-playground"></div>
+                </section>
+
+                <section>
                     <h2>Reverb pedal</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-// The audio stream is just a stream of an audio file (hall_reverb.ogg)
+                    <pre><code class="language-javascript">// The audio stream is just a stream of an audio file (hall_reverb.ogg)
 
 var buffer;
 audioContext.decodeAudioData(audioStream.data, function(buffer) {
@@ -184,13 +180,12 @@ var convolverNode = audioContext.createConvolver();
     convolverNode.buffer = buffer;
 
 inputNode.connect(convolverNode);
-convolverNode.connect(audioContext.destination);
-                    </code></pre>
+convolverNode.connect(audioContext.destination);</code></pre>
 
                     <p>Impulse response file by <a href="https://github.com/cwilso/WebAudio">Chris Wilson</a></p>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Other nodes</h2>
 
                     <ul>
@@ -212,11 +207,10 @@ convolverNode.connect(audioContext.destination);
                     <h1>web-midi-api</h1>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Using the web-midi-api to communicate with external hardware</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-navigator.requestMIDIAccess().then(function(midi) {
+                    <pre><code class="language-javascript">navigator.requestMIDIAccess().then(function(midi) {
     var inputs = midi.inputs.values(),
         devices = [],
         i;
@@ -228,8 +222,7 @@ navigator.requestMIDIAccess().then(function(midi) {
     devices[0].onmidimessage = function(message) {
         // Incomming message from the midi-device
     };
-});
-                    </code></pre>
+});</code></pre>
                 </section>
 
                 <section>
@@ -244,9 +237,12 @@ navigator.requestMIDIAccess().then(function(midi) {
 
         </div>
 
+        <script src="plugin/prism/prism.js"></script>
         <script src="lib/js/head.min.js"></script>
         <script src="js/reveal.js"></script>
         <script src="js/waveform.js"></script>
+        <script src="js/oscilloscope.js"></script>
+        <script src="js/playground.js"></script>
 
         <script>
 
@@ -265,7 +261,6 @@ navigator.requestMIDIAccess().then(function(midi) {
                     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
                     { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
                     { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
                     { src: 'plugin/zoom-js/zoom.js', async: true },
                     { src: 'plugin/notes/notes.js', async: true }
                 ]
@@ -280,6 +275,13 @@ navigator.requestMIDIAccess().then(function(midi) {
                 document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
             });
 
+            window.onload = function() {
+                var gainContent = 'var oscillator = audioContext.createOscillator();\n    oscillator.type = \'sine\';\n    oscillator.frequency.value = 400;\n    oscillator.start();\n\nvar gainNode = audioContext.createGain();\n    gainNode.gain.value = 0.5;\n\nvar oscilloscope = new Oscilloscope(\'.audio-playground__oscilloscope\', audioContext);\n    oscillator.connect(gainNode);\n    gainNode.connect(oscilloscope.analyserNode);\n    oscilloscope.start();',
+                    gainPlayground = new AudioPlayground('.js-audio-playground--gain', gainContent),
+                    oscilatorPlayground = new AudioPlayground('.js-audio-playground--oscillator');
+            };
+
         </script>
     </body>
 </html>
+

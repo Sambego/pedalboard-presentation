@@ -1,14 +1,14 @@
 body {
-	font-family: Helvetica, Arial, sans-serif;
-	color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
 }
 
 .controls {
-	display: none;
+    display: none;
 }
 
 .reveal {
-	background: #16a085;
+    background: #16a085;
 }
 
 /* Typo */
@@ -20,131 +20,164 @@ body {
 .reveal h6,
 .reveal p,
 .reveal a {
-	font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .reveal h1,
 .reveal h2 {
-	font-size: 4rem;
-	text-transform: uppercase;
+    font-size: 4rem;
+    text-transform: uppercase;
 }
 
 .reveal h2 {
-	padding-bottom: 1rem;
+    padding-bottom: 1rem;
 
-	border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #fff;
 
-	text-align: left	
+    text-align: left
 }
 
 .reveal h2 + * {
-	margin-top: 4rem;
+    margin-top: 4rem;
 }
 
 .reveal p {
-	margin-bottom: 1rem;
+    margin-bottom: 1rem;
 
-	font-size: 1.5rem;
-	text-align: left;
+    font-size: 1.5rem;
+    text-align: left;
 }
 
 .reveal a {
-	color: #fff;
+    color: #fff;
 
-	border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #fff;
 
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .reveal ul {
-	margin-left: 2rem;
+    margin-left: 2rem;
 
-	font-family: 'Quicksand', sans-serif;
-	text-align: left;
+    font-family: 'Quicksand', sans-serif;
+    text-align: left;
 }
 
 .reveal li {
-	margin-bottom: 1rem;
-	font-size: 2rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
 }
 
 .reveal pre {
-	border-radius: 5px;
+    border-radius: 5px;
 
-	font-family: courier;
+    font-family: courier;
 }
 
 .reveal pre.inline {
-	display: inline-block;
-	padding: .2rem;
-	
-	background: #fff;
+    display: inline-block;
+    padding: .2rem;
 
-	color: #000;
+    background: #fff;
+
+    color: #000;
 }
 
 .reveal code {
-	margin-bottom: 1.5rem;
-	padding: 1rem;
+    margin-bottom: 1.5rem;
 
-	font-size: 1.4rem;
-	text-align: left;
+    font-size: 1.4rem;
+    text-align: left;
 }
 
 /* Links */
 .reveal .link {
-	border: none;
+    border: none;
 
-	color: #fff;
-	font-size: 1rem;
+    color: #fff;
+    font-size: 1rem;
 
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .reveal .link:hover {
-	text-decoration: none;	
+    text-decoration: none;
 }
 
 .reveal .link--twitter {
-	float: left;
+    float: left;
 }
 
 .reveal .link--github {
-	float: right;
+    float: right;
 }
 
-/* Footer */ 
+/* Footer */
 .reveal .footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 2;
-	clear: both;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    clear: both;
 
-	padding: 1rem;
+    padding: 1rem;
 
-	background: rgba(0, 0, 0, .1);
+    background: rgba(0, 0, 0, .1);
 }
 
 /* Waveform */
 .waveform {
-	position: fixed;
-	top: 50%;
-	left: 0;
-	z-index: 2;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 2;
 
-	margin-top: -200px;
+    margin-top: -200px;
 }
 
 .waveform__path {
-	fill: none;
+    fill: none;
 
-	stroke: rgba(255, 255, 255, .4);
-	stroke-width: 4px;
+    stroke: rgba(255, 255, 255, .4);
+    stroke-width: 4px;
 }
 
 .reveal .instagram {
-	width: 50%;
-	margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+
+.reveal .oscilloscope__wave {
+    fill: none;
+
+    stroke: #fff;
+    stroke-width: 4px;
+}
+
+
+.reveal .audio-playground {
+    clear: both;
+    margin: 2rem -13.5rem 0 -13.5rem;
+}
+
+.reveal .audio-playground__editor {
+    float: left;
+    width: 50rem;
+    margin: 0 1rem;
+
+    font-family: courier;
+}
+
+.reveal .audio-playground__oscilloscope {
+    float: right;
+    width: 30rem;
+    height: 30rem;
+    margin: .4rem 2rem 0;
+
+    background: rgba(255, 255, 255, .2);
+
+    border-radius: 5px;
 }
