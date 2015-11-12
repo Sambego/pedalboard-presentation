@@ -25,13 +25,15 @@ var AudioPlayground = AudioPlayground || function(target, content, language) {
     this.container.appendChild(this.oscilloscope);
 
     runEditorCode = function(editor) {
-        eval(editor.innerHTML.replace(/<\/?[^>]+(>|$)/g, ''));
+        eval(editor.innerHTML.replace(/<\/?[^>]+(>|$)/g, '').replace('&lt;', '<'));
     };
 
     initOsciloscope = function() {
         Prism.highlightAll()
 
         runEditorCode(this.editorCode);
+
+        console.log(this.container, this.oscilloscope);
 
         this.editor.addEventListener('blur', function() {
             Prism.highlightAll(this.editorCode);

@@ -164,8 +164,11 @@ body {
 }
 
 .reveal .audio-playground__editor {
+    overflow: scroll;
+
     float: left;
     width: 50rem;
+    max-height: 30rem;
     margin: 0 1rem;
 
     font-family: courier;

@@ -123,7 +123,7 @@ gainNode.connect(audioContext.destination);</code></pre>
                 </section>
 
                 <section>
-                    <h2>Gain Node node</h2>
+                    <h2>Gain node</h2>
                     <div class="js-audio-playground--gain audio-playground"></div>
                 </section>
 
@@ -139,6 +139,11 @@ waveShaperNode.connect(audioContext.destination);</code></pre>
 
                     <p>An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a>.</p>
                 </section>
+
+                <!-- <section>
+                    <h2>Waveshaper node</h2>
+                    <div class="js-audio-playground--waveshaper audio-playground"></div>
+                </section> -->
 
                 <section>
                     <h2>Delay pedal</h2>
@@ -277,8 +282,11 @@ convolverNode.connect(audioContext.destination);</code></pre>
 
             window.onload = function() {
                 var gainContent = 'var oscillator = audioContext.createOscillator();\n    oscillator.type = \'sine\';\n    oscillator.frequency.value = 400;\n    oscillator.start();\n\nvar gainNode = audioContext.createGain();\n    gainNode.gain.value = 0.5;\n\nvar oscilloscope = new Oscilloscope(\'.audio-playground__oscilloscope\', audioContext);\n    oscillator.connect(gainNode);\n    gainNode.connect(oscilloscope.analyserNode);\n    oscilloscope.start();',
-                    gainPlayground = new AudioPlayground('.js-audio-playground--gain', gainContent),
-                    oscilatorPlayground = new AudioPlayground('.js-audio-playground--oscillator');
+                    waveshaperContent = 'var oscillator = audioContext.createOscillator();\n    oscillator.type = \'sine\';\n    oscillator.frequency.value = 400;\n    oscillator.start();\n\nvar waveShaperNode = audioContext.createWaveShaper();\n    waveShaperNode.oversample = \'4x\';\n    waveShaperNode.curve = function() {\n        var intensity = 50,\n            amount = 44100,\n            curve = new Float32Array(amount),\n            deg = Math.PI / 180,\n            i = 0,\n            x;\n\n        for (; i < amount; i++ ) {\n            x = i * 2 / amount - 1;\n            curve[i] = ( 3 + intensity ) * x * 20 * deg / ( Math.PI + intensity * Math.abs(x));\n        }\n\n        return curve;\n    };\n\nvar oscilloscope2 = new Oscilloscope(\'.audio-playground__oscilloscope\', audioContext);\n    oscillator.connect(waveShaperNode);\n    waveShaperNode.connect(oscilloscope2.analyserNode);\n    oscilloscope2.start();';
+
+                var gainPlayground = new AudioPlayground('.js-audio-playground--gain', gainContent),
+                    oscilatorPlayground = new AudioPlayground('.js-audio-playground--oscillator')/*,
+                    waveshaperPlayground = new AudioPlayground('.js-audio-playground--waveshaper', waveshaperContent)*/;
             };
 
         </script>
