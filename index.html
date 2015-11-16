@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="css/theme/sam.css" id="theme">
 
         <!-- Code syntax highlighting -->
-        <link rel="stylesheet" href="lib/css/github.css">
+        <link rel="stylesheet" href="plugin/prism/prism.css">
 
         <!-- Quicksand -->
         <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
@@ -52,15 +52,17 @@
                     <h1>Web-audio-api</h1>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Sam Bellen</h2>
 
-                    <ul>    
+                    <ul>
                         <li>Front-end developer</li>
                         <li>Kunstmaan</li>
                         <li>@sambego</li>
                         <li>github.com/sambego</li>
                     </ul>
+
+                    <img src="sam.png" class="img--sam" alt="Sam Bellen">
                 </section>
 
                 <section>
@@ -70,21 +72,20 @@
                     </div>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Pedalboard</h2>
 
-                    <ul>    
+                    <ul>
                         <li>Access the microphone with <pre class="inline">window.getUserMedia()</pre></li>
                         <li>Alter sounds with the web-audio-api</li>
                         <li>Controll all of this with the web-midi-api</li>
                     </ul>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Get the user's microphone sound</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ...;
+                    <pre><code class="language-javascript">navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ...;
 
 navigator.getUserMedia({
     audio: true
@@ -96,84 +97,76 @@ navigator.getUserMedia({
                     </code></pre>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Add effects to the guitar sound</h2>
 
                     <p>Start by creating a new audio-context.</p>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var audioContext = new AudioContext();
-                    </code></pre>
+                    <pre><code class="language-javascript">var audioContext = new AudioContext();</code></pre>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Create our basic sound chain</h2>
 
                     <p>The sound signal is passed from node to node, untill it reaches the last one.</p>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var inputNode = audioContext.createMediaStreamSource(stream);
-    inputNode.connect(audioContext.destination); 
-                    </code></pre>
+                    <pre><code class="language-javascript">var inputNode = audioContext.createMediaStreamSource(stream);
+    inputNode.connect(audioContext.destination);</code></pre>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Volume pedal</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var gainNode = audioContext.createGain();
+                    <pre><code class="language-javascript">var gainNode = audioContext.createGain();
     gainNode.gain.value = .5; // The volume is 50%
 
 inputNode.connect(gainNode);
-gainNode.connect(audioContext.destination);
-                    </code></pre>
+gainNode.connect(audioContext.destination);</code></pre>
+
+                    <a class="js-toggle-playground link link--example" data-content="gain"><i class="fa fa-cogs"></i> Example</a>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Distortion pedal</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var waveShaperNode = audioContext.createWaveShaper();
-    waveShaperNode.oversample = '4x'; 
+                    <pre><code class="language-javascript">var waveShaperNode = audioContext.createWaveShaper();
+    waveShaperNode.oversample = '4x';
     waveShaperNode.curve = fancyMathToCalculateCurve();
 
 inputNode.connect(waveShaperNode);
-waveShaperNode.connect(audioContext.destination);
-                    </code></pre>
+waveShaperNode.connect(audioContext.destination);</code></pre>
+                    
+                    <a class="js-toggle-playground link link--example" data-content="waveShaper"><i class="fa fa-cogs"></i> Example</a>
 
                     <p>An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a>.</p>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Delay pedal</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var delayNode = audioContext.createDelay();
+                    <pre><code class="language-javascript">var delayNode = audioContext.createDelay();
     delayNode.delayTime.value = 1; // 1 second delay
 
 inputNode.connect(delayNode);
-delayNode.connect(audioContext.destination);
-                    </code></pre>
+delayNode.connect(audioContext.destination);</code></pre>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Flanger pedal</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-var oscillatorNode = audioContext.createOscillator();
+                    <pre><code class="language-javascript">var oscillatorNode = audioContext.createOscillator();
     oscillatorNode.type = 'sine';
     oscillatorNode.frequency.value = 1000; // 1000Hz
 
 inputNode.connect(oscillatorNode);
-oscillatorNode.connect(audioContext.destination);
-                    </code></pre>
+oscillatorNode.connect(audioContext.destination);</code></pre>
+                    <a class="js-toggle-playground link link--example" data-content="oscillator"><i class="fa fa-cogs"></i> Example</a>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Reverb pedal</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-// The audio stream is just a stream of an audio file (hall_reverb.ogg)
+                    <pre><code class="language-javascript">// The audio stream is just a stream of an audio file (hall_reverb.ogg)
 
 var buffer;
 audioContext.decodeAudioData(audioStream.data, function(buffer) {
@@ -184,13 +177,12 @@ var convolverNode = audioContext.createConvolver();
     convolverNode.buffer = buffer;
 
 inputNode.connect(convolverNode);
-convolverNode.connect(audioContext.destination);
-                    </code></pre>
+convolverNode.connect(audioContext.destination);</code></pre>
 
                     <p>Impulse response file by <a href="https://github.com/cwilso/WebAudio">Chris Wilson</a></p>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Other nodes</h2>
 
                     <ul>
@@ -212,11 +204,10 @@ convolverNode.connect(audioContext.destination);
                     <h1>web-midi-api</h1>
                 </section>
 
-                <section>               
+                <section>
                     <h2>Using the web-midi-api to communicate with external hardware</h2>
 
-                    <pre><code class="hljs JavaScript" data-trim contenteditable>
-navigator.requestMIDIAccess().then(function(midi) {
+                    <pre><code class="language-javascript">navigator.requestMIDIAccess().then(function(midi) {
     var inputs = midi.inputs.values(),
         devices = [],
         i;
@@ -228,12 +219,17 @@ navigator.requestMIDIAccess().then(function(midi) {
     devices[0].onmidimessage = function(message) {
         // Incomming message from the midi-device
     };
-});
-                    </code></pre>
+});</code></pre>
+                </section>
+
+                <section>
+                    <h1>We're hiring!</h1>
+                    <a href="http://www.kunstmaan.be/jobs" target="_blank">http://www.kunstmaan.be/jobs</a>
                 </section>
 
                 <section>
                     <h1>Thank you!</h1>
+                    <img src="sam.png" alt="Sam Bellen" class="img--sam--2">
                 </section>
             </div>
 
@@ -242,11 +238,21 @@ navigator.requestMIDIAccess().then(function(midi) {
                 <a href="https://github.com/sambego" class="link link--github"><i class="fa fa-github"></i> Sambego</a>
             </footer>
 
+            <div class="js-playground playground">
+                <h2>oscilloscope</h2>
+                <div class="js-audio-playground audio-playground"></div>
+                <a class="js-toggle-playground playground__toggle"><i class="fa fa-times"></i></a>
+            </div>
+
         </div>
 
+        <script src="plugin/prism/prism.js"></script>
         <script src="lib/js/head.min.js"></script>
         <script src="js/reveal.js"></script>
         <script src="js/waveform.js"></script>
+        <script src="js/oscilloscope.js"></script>
+        <script src="js/playground.js"></script>
+        <script src="js/togglePlayground.js"></script>
 
         <script>
 
@@ -265,7 +271,6 @@ navigator.requestMIDIAccess().then(function(midi) {
                     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
                     { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
                     { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
                     { src: 'plugin/zoom-js/zoom.js', async: true },
                     { src: 'plugin/notes/notes.js', async: true }
                 ]
@@ -279,7 +284,6 @@ navigator.requestMIDIAccess().then(function(midi) {
             Reveal.addEventListener('slidechanged', function(event) {
                 document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
             });
-
         </script>
     </body>
 </html>

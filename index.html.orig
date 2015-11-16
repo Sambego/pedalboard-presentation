@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Web-audio</title>
+
+        <meta name="description" content="Using the web-audio-api and web-midi-api to create interactive guitar effects">
+        <meta name="author" content="Sam Bellen">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/sam.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+<<<<<<< HEAD
+        <link rel="stylesheet" href="lib/css/github.css">
+=======
+        <link rel="stylesheet" href="plugin/prism/prism.css">
+>>>>>>> master
+
+        <!-- Quicksand -->
+        <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+
+        <!-- Font-awsesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="js-waveform waveform"></div>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Web-audio-api</h1>
+                </section>
+
+<<<<<<< HEAD
+                <section>               
+                    <h2>Sam Bellen</h2>
+
+                    <ul>    
+=======
+                <section>
+                    <h2>Sam Bellen</h2>
+
+                    <ul>
+>>>>>>> master
+                        <li>Front-end developer</li>
+                        <li>Kunstmaan</li>
+                        <li>@sambego</li>
+                        <li>github.com/sambego</li>
+                    </ul>
+<<<<<<< HEAD
+=======
+
+                    <img src="sam.png" class="img--sam" alt="Sam Bellen">
+>>>>>>> master
+                </section>
+
+                <section>
+                    <div class="instagram">
+                        <blockquote class="instagram-media" data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://instagram.com/p/z13H6WiPD1/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Een foto die is geplaatst door Sam Bellen (@sambego)</a> op <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-05T09:49:33+00:00">5 Mrt 2015 om 1:49 PST</time></p></div></blockquote>
+                        <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+                    </div>
+                </section>
+
+<<<<<<< HEAD
+                <section>               
+                    <h2>Pedalboard</h2>
+
+                    <ul>    
+=======
+                <section>
+                    <h2>Pedalboard</h2>
+
+                    <ul>
+>>>>>>> master
+                        <li>Access the microphone with <pre class="inline">window.getUserMedia()</pre></li>
+                        <li>Alter sounds with the web-audio-api</li>
+                        <li>Controll all of this with the web-midi-api</li>
+                    </ul>
+                </section>
+
+<<<<<<< HEAD
+                <section>               
+                    <h2>Get the user's microphone sound</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ...;
+=======
+                <section>
+                    <h2>Get the user's microphone sound</h2>
+
+                    <pre><code class="language-javascript">navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ...;
+>>>>>>> master
+
+navigator.getUserMedia({
+    audio: true
+}, function(stream) {
+    // Do something with the sound.
+}, function() {
+    // Errors, gotta catch 'em all!
+});
+<<<<<<< HEAD
+                    </code></pre>
+                </section>
+
+                <section>               
+=======
+</code></pre>
+                </section>
+
+                <section>
+>>>>>>> master
+                    <h2>Add effects to the guitar sound</h2>
+
+                    <p>Start by creating a new audio-context.</p>
+
+<<<<<<< HEAD
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var audioContext = new AudioContext();
+                    </code></pre>
+                </section>
+
+                <section>               
+=======
+                    <pre><code class="language-javascript">var audioContext = new AudioContext();</code></pre>
+                </section>
+
+                <section>
+>>>>>>> master
+                    <h2>Create our basic sound chain</h2>
+
+                    <p>The sound signal is passed from node to node, untill it reaches the last one.</p>
+
+<<<<<<< HEAD
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var inputNode = audioContext.createMediaStreamSource(stream);
+    inputNode.connect(audioContext.destination); 
+                    </code></pre>
+                </section>
+
+                <section>               
+                    <h2>Volume pedal</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var gainNode = audioContext.createGain();
+    gainNode.gain.value = .5; // The volume is 50%
+
+inputNode.connect(gainNode);
+gainNode.connect(audioContext.destination);
+                    </code></pre>
+                </section>
+
+                <section>               
+                    <h2>Distortion pedal</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var waveShaperNode = audioContext.createWaveShaper();
+    waveShaperNode.oversample = '4x'; 
+    waveShaperNode.curve = fancyMathToCalculateCurve();
+
+inputNode.connect(waveShaperNode);
+waveShaperNode.connect(audioContext.destination);
+                    </code></pre>
+=======
+                    <pre><code class="language-javascript">var inputNode = audioContext.createMediaStreamSource(stream);
+    inputNode.connect(audioContext.destination);</code></pre>
+                </section>
+
+                <section>
+                    <h2>Volume pedal</h2>
+
+                    <pre><code class="language-javascript">var gainNode = audioContext.createGain();
+    gainNode.gain.value = .5; // The volume is 50%
+
+inputNode.connect(gainNode);
+gainNode.connect(audioContext.destination);</code></pre>
+
+                    <a class="js-toggle-playground link link--example" data-content="gain"><i class="fa fa-cogs"></i> Example</a>
+                </section>
+
+                <section>
+                    <h2>Distortion pedal</h2>
+
+                    <pre><code class="language-javascript">var waveShaperNode = audioContext.createWaveShaper();
+    waveShaperNode.oversample = '4x';
+    waveShaperNode.curve = fancyMathToCalculateCurve();
+
+inputNode.connect(waveShaperNode);
+waveShaperNode.connect(audioContext.destination);</code></pre>
+                    
+                    <a class="js-toggle-playground link link--example" data-content="waveShaper"><i class="fa fa-cogs"></i> Example</a>
+>>>>>>> master
+
+                    <p>An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a>.</p>
+                </section>
+
+<<<<<<< HEAD
+                <section>               
+                    <h2>Delay pedal</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var delayNode = audioContext.createDelay();
+    delayNode.delayTime.value = 1; // 1 second delay
+
+inputNode.connect(delayNode);
+delayNode.connect(audioContext.destination);
+                    </code></pre>
+                </section>
+
+                <section>               
+                    <h2>Flanger pedal</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+var oscillatorNode = audioContext.createOscillator();
+=======
+                <section>
+                    <h2>Delay pedal</h2>
+
+                    <pre><code class="language-javascript">var delayNode = audioContext.createDelay();
+    delayNode.delayTime.value = 1; // 1 second delay
+
+inputNode.connect(delayNode);
+delayNode.connect(audioContext.destination);</code></pre>
+                </section>
+
+                <section>
+                    <h2>Flanger pedal</h2>
+
+                    <pre><code class="language-javascript">var oscillatorNode = audioContext.createOscillator();
+>>>>>>> master
+    oscillatorNode.type = 'sine';
+    oscillatorNode.frequency.value = 1000; // 1000Hz
+
+inputNode.connect(oscillatorNode);
+<<<<<<< HEAD
+oscillatorNode.connect(audioContext.destination);
+                    </code></pre>
+                </section>
+
+                <section>               
+                    <h2>Reverb pedal</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+// The audio stream is just a stream of an audio file (hall_reverb.ogg)
+=======
+oscillatorNode.connect(audioContext.destination);</code></pre>
+                    <a class="js-toggle-playground link link--example" data-content="oscillator"><i class="fa fa-cogs"></i> Example</a>
+                </section>
+
+                <section>
+                    <h2>Reverb pedal</h2>
+
+                    <pre><code class="language-javascript">// The audio stream is just a stream of an audio file (hall_reverb.ogg)
+>>>>>>> master
+
+var buffer;
+audioContext.decodeAudioData(audioStream.data, function(buffer) {
+    buffer = buffer
+};
+
+var convolverNode = audioContext.createConvolver();
+    convolverNode.buffer = buffer;
+
+inputNode.connect(convolverNode);
+<<<<<<< HEAD
+convolverNode.connect(audioContext.destination);
+                    </code></pre>
+=======
+convolverNode.connect(audioContext.destination);</code></pre>
+>>>>>>> master
+
+                    <p>Impulse response file by <a href="https://github.com/cwilso/WebAudio">Chris Wilson</a></p>
+                </section>
+
+<<<<<<< HEAD
+                <section>               
+=======
+                <section>
+>>>>>>> master
+                    <h2>Other nodes</h2>
+
+                    <ul>
+                        <li>AnalyserNode</li>
+                        <li>BiquadFilterNode</li>
+                        <li>ChannelSplitterNode</li>
+                        <li>ChannelMergerNode</li>
+                        <li>PannerNode</li>
+                        <li>DynamicsCompressorNode</li>
+                        <li>...</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1><a href="http://0.0.0.0:9000/" target="_blank">Test test, one two, test</a></h1>
+                </section>
+
+                <section>
+                    <h1>web-midi-api</h1>
+                </section>
+
+<<<<<<< HEAD
+                <section>               
+                    <h2>Using the web-midi-api to communicate with external hardware</h2>
+
+                    <pre><code class="hljs JavaScript" data-trim contenteditable>
+navigator.requestMIDIAccess().then(function(midi) {
+=======
+                <section>
+                    <h2>Using the web-midi-api to communicate with external hardware</h2>
+
+                    <pre><code class="language-javascript">navigator.requestMIDIAccess().then(function(midi) {
+>>>>>>> master
+    var inputs = midi.inputs.values(),
+        devices = [],
+        i;
+
+    for (i = inputs.next(); i && !i.done; i = inputs.next()) {
+        devices.push(i.value);
+    }
+
+    devices[0].onmidimessage = function(message) {
+        // Incomming message from the midi-device
+    };
+<<<<<<< HEAD
+});
+                    </code></pre>
+=======
+});</code></pre>
+                </section>
+
+                <section>
+                    <h1>We're hiring!</h1>
+                    <a href="http://www.kunstmaan.be/jobs" target="_blank">http://www.kunstmaan.be/jobs</a>
+>>>>>>> master
+                </section>
+
+                <section>
+                    <h1>Thank you!</h1>
+<<<<<<< HEAD
+=======
+                    <img src="sam.png" alt="Sam Bellen" class="img--sam--2">
+>>>>>>> master
+                </section>
+            </div>
+
+            <footer class="footer">
+                <a href="https://twitter.com/sambego" class="link link--twitter"><i class="fa fa-twitter"></i> @sambego</a>
+                <a href="https://github.com/sambego" class="link link--github"><i class="fa fa-github"></i> Sambego</a>
+            </footer>
+
+<<<<<<< HEAD
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script src="js/waveform.js"></script>
+=======
+            <div class="js-playground playground">
+                <h2>oscilloscope</h2>
+                <div class="js-audio-playground audio-playground"></div>
+                <a class="js-toggle-playground playground__toggle"><i class="fa fa-times"></i></a>
+            </div>
+
+        </div>
+
+        <script src="plugin/prism/prism.js"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script src="js/waveform.js"></script>
+        <script src="js/oscilloscope.js"></script>
+        <script src="js/playground.js"></script>
+        <script src="js/togglePlayground.js"></script>
+>>>>>>> master
+
+        <script>
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+<<<<<<< HEAD
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+=======
+>>>>>>> master
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+
+            Reveal.addEventListener('ready', function(event) {
+                document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
+            });
+
+            Reveal.addEventListener('slidechanged', function(event) {
+                document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
+            });
+<<<<<<< HEAD
+
+        </script>
+    </body>
+</html>
+=======
+        </script>
+    </body>
+</html>
+
+>>>>>>> master
