@@ -1,10 +1,13 @@
 'use strict';
 
-var START_SAMPLE = 'var oscillator = audioContext.createOscillator();\n    oscillator.type = \'sine\';\n    oscillator.frequency.value = 400;\n    oscillator.start();\n\nvar oscilloscope = new Oscilloscope(\'.audio-playground__oscilloscope\', audioContext);\n    oscillator.connect(oscilloscope.analyserNode);\n    oscilloscope.start();';
+var START_SAMPLE = 'var oscillator = this.audioContext.createOscillator();\n    oscillator.type = \'sine\';\n    oscillator.frequency.value = 400;\n    oscillator.start();\n\nvar oscilloscope = new Oscilloscope(\'.audio-playground__oscilloscope\', this.audioContext);\n    oscillator.connect(oscilloscope.analyserNode);\n    oscilloscope.start();';
 
 var AudioPlayground = AudioPlayground || function(target, content, language) {
-    var audioContext = new AudioContext(),
-        runEditorCode, initOsciloscope;
+    var runEditorCode, initOsciloscope;
+
+    this.audioContext = new AudioContext();
+
+    this.config = {};
 
     this.container = document.querySelector(target);
 
@@ -23,28 +26,39 @@ var AudioPlayground = AudioPlayground || function(target, content, language) {
     this.editor.appendChild(this.editorInner);
     this.container.appendChild(this.editor);
     this.container.appendChild(this.oscilloscope);
-
-    runEditorCode = function(editor) {
-        eval(editor.innerHTML.replace(/<\/?[^>]+(>|$)/g, '').replace('&lt;', '<'));
-    };
-
-    initOsciloscope = function() {
-        Prism.highlightAll()
-
-        runEditorCode(this.editorCode);
-
-        console.log(this.container, this.oscilloscope);
-
-        this.editor.addEventListener('blur', function() {
-            Prism.highlightAll(this.editorCode);
-
-            while (this.oscilloscope.firstChild) {
-                this.oscilloscope.removeChild(this.oscilloscope.firstChild);
-            }
-
-            runEditorCode(this.editorCode);
-        }.bind(this));
-    }.bind(this);
-
-    initOsciloscope();
 };
+
+AudioPlayground.prototype.clearOscilloscope = function() {
+    while (this.oscilloscope.firstChild) {
+        this.oscilloscope.removeChild(this.oscilloscope.firstChild);
+    }
+};
+
+AudioPlayground.prototype.runEditorCode = function(editor) {
+    this.clearOscilloscope();
+
+    eval(this.editor.innerHTML.replace(/<\/?[^>]+(>|$)/g, '').replace('&lt;', '<'));
+};
+
+AudioPlayground.prototype.initOsciloscope = function() {
+    Prism.highlightAll()
+
+    this.runEditorCode(this.editorCode);
+
+    this.editor.addEventListener('blur', function() {
+        Prism.highlightAll(this.editorCode);
+
+        this.runEditorCode(this.editorCode);
+    }.bind(this));
+};
+
+AudioPlayground.prototype.setContent = function(key) {
+    this.content = this.config[key];
+    this.editorCode.innerHTML = this.content;
+
+    this.initOsciloscope(); 
+};
+
+AudioPlayground.prototype.addToConfig = function(key, value) {
+    this.config[key] = value;
+}

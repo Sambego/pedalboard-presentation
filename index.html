@@ -61,6 +61,8 @@
                         <li>@sambego</li>
                         <li>github.com/sambego</li>
                     </ul>
+
+                    <img src="sam.png" class="img--sam" alt="Sam Bellen">
                 </section>
 
                 <section>
@@ -120,11 +122,8 @@ navigator.getUserMedia({
 
 inputNode.connect(gainNode);
 gainNode.connect(audioContext.destination);</code></pre>
-                </section>
 
-                <section>
-                    <h2>Gain node</h2>
-                    <div class="js-audio-playground--gain audio-playground"></div>
+                    <a class="js-toggle-playground link link--example" data-content="gain"><i class="fa fa-cogs"></i> Example</a>
                 </section>
 
                 <section>
@@ -136,14 +135,11 @@ gainNode.connect(audioContext.destination);</code></pre>
 
 inputNode.connect(waveShaperNode);
 waveShaperNode.connect(audioContext.destination);</code></pre>
+                    
+                    <a class="js-toggle-playground link link--example" data-content="waveShaper"><i class="fa fa-cogs"></i> Example</a>
 
                     <p>An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a>.</p>
                 </section>
-
-                <!-- <section>
-                    <h2>Waveshaper node</h2>
-                    <div class="js-audio-playground--waveshaper audio-playground"></div>
-                </section> -->
 
                 <section>
                     <h2>Delay pedal</h2>
@@ -164,11 +160,7 @@ delayNode.connect(audioContext.destination);</code></pre>
 
 inputNode.connect(oscillatorNode);
 oscillatorNode.connect(audioContext.destination);</code></pre>
-                </section>
-
-                <section>
-                    <h2>Oscillator node</h2>
-                    <div class="js-audio-playground--oscillator audio-playground"></div>
+                    <a class="js-toggle-playground link link--example" data-content="oscillator"><i class="fa fa-cogs"></i> Example</a>
                 </section>
 
                 <section>
@@ -231,7 +223,13 @@ convolverNode.connect(audioContext.destination);</code></pre>
                 </section>
 
                 <section>
+                    <h1>We're hiring!</h1>
+                    <a href="http://www.kunstmaan.be/jobs" target="_blank">http://www.kunstmaan.be/jobs</a>
+                </section>
+
+                <section>
                     <h1>Thank you!</h1>
+                    <img src="sam.png" alt="Sam Bellen" class="img--sam--2">
                 </section>
             </div>
 
@@ -239,6 +237,12 @@ convolverNode.connect(audioContext.destination);</code></pre>
                 <a href="https://twitter.com/sambego" class="link link--twitter"><i class="fa fa-twitter"></i> @sambego</a>
                 <a href="https://github.com/sambego" class="link link--github"><i class="fa fa-github"></i> Sambego</a>
             </footer>
+
+            <div class="js-playground playground">
+                <h2>oscilloscope</h2>
+                <div class="js-audio-playground audio-playground"></div>
+                <a class="js-toggle-playground playground__toggle"><i class="fa fa-times"></i></a>
+            </div>
 
         </div>
 
@@ -248,6 +252,7 @@ convolverNode.connect(audioContext.destination);</code></pre>
         <script src="js/waveform.js"></script>
         <script src="js/oscilloscope.js"></script>
         <script src="js/playground.js"></script>
+        <script src="js/togglePlayground.js"></script>
 
         <script>
 
@@ -279,16 +284,6 @@ convolverNode.connect(audioContext.destination);</code></pre>
             Reveal.addEventListener('slidechanged', function(event) {
                 document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
             });
-
-            window.onload = function() {
-                var gainContent = 'var oscillator = audioContext.createOscillator();\n    oscillator.type = \'sine\';\n    oscillator.frequency.value = 400;\n    oscillator.start();\n\nvar gainNode = audioContext.createGain();\n    gainNode.gain.value = 0.5;\n\nvar oscilloscope = new Oscilloscope(\'.audio-playground__oscilloscope\', audioContext);\n    oscillator.connect(gainNode);\n    gainNode.connect(oscilloscope.analyserNode);\n    oscilloscope.start();',
-                    waveshaperContent = 'var oscillator = audioContext.createOscillator();\n    oscillator.type = \'sine\';\n    oscillator.frequency.value = 400;\n    oscillator.start();\n\nvar waveShaperNode = audioContext.createWaveShaper();\n    waveShaperNode.oversample = \'4x\';\n    waveShaperNode.curve = function() {\n        var intensity = 50,\n            amount = 44100,\n            curve = new Float32Array(amount),\n            deg = Math.PI / 180,\n            i = 0,\n            x;\n\n        for (; i < amount; i++ ) {\n            x = i * 2 / amount - 1;\n            curve[i] = ( 3 + intensity ) * x * 20 * deg / ( Math.PI + intensity * Math.abs(x));\n        }\n\n        return curve;\n    };\n\nvar oscilloscope2 = new Oscilloscope(\'.audio-playground__oscilloscope\', audioContext);\n    oscillator.connect(waveShaperNode);\n    waveShaperNode.connect(oscilloscope2.analyserNode);\n    oscilloscope2.start();';
-
-                var gainPlayground = new AudioPlayground('.js-audio-playground--gain', gainContent),
-                    oscilatorPlayground = new AudioPlayground('.js-audio-playground--oscillator')/*,
-                    waveshaperPlayground = new AudioPlayground('.js-audio-playground--waveshaper', waveshaperContent)*/;
-            };
-
         </script>
     </body>
 </html>

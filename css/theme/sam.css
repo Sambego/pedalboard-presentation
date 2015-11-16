@@ -8,7 +8,7 @@ body {
 }
 
 .reveal {
-    background: #16a085;
+    background: #F5BB3A;
 }
 
 /* Typo */
@@ -34,6 +34,7 @@ body {
 
     border-bottom: 2px solid #fff;
 
+    font-size: 3rem;
     text-align: left
 }
 
@@ -90,6 +91,23 @@ body {
     text-align: left;
 }
 
+.reveal .img--sam {
+	transform: translate(50%, 50%);
+	position: fixed;
+	bottom: 18.5%;
+	right: 5rem;
+}
+
+.reveal .img--sam--2 {
+	transform: translate(50%, 50%);
+	position: fixed;
+	bottom: -112%;
+	right: 5rem;
+
+	width: 25rem;
+	height: 25rem;
+}
+
 /* Links */
 .reveal .link {
     border: none;
@@ -112,13 +130,20 @@ body {
     float: right;
 }
 
+.reveal .link--example {
+	display: inline-block;
+	margin-bottom: 1rem;
+
+	cursor: pointer;
+}
+
 /* Footer */
 .reveal .footer {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
     clear: both;
 
     padding: 1rem;
@@ -157,21 +182,57 @@ body {
     stroke-width: 4px;
 }
 
+.reveal .playground {
+	transition: all, .4s, ease-in-out;
+
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+
+	background: #F5BB3A;
+}
+
+.reveal .playground h2 {
+	padding: .5rem 1rem;
+}
+
+.reveal .playground.active {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.reveal .playground__toggle {
+	position: absolute;
+	top: .2rem;
+	right: .5rem;
+
+	border: none;
+
+	font-size: 2rem;
+	text-decoration: none;
+
+	cursor: pointer;
+}
 
 .reveal .audio-playground {
     clear: both;
-    margin: 2rem -13.5rem 0 -13.5rem;
+
+    margin: 2rem 0 0 0;
 }
 
 .reveal .audio-playground__editor {
     overflow: scroll;
 
     float: left;
-    width: 50rem;
+    width: 44rem;
     max-height: 30rem;
     margin: 0 1rem;
-
-    font-family: courier;
 }
 
 .reveal .audio-playground__oscilloscope {
