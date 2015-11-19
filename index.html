@@ -94,7 +94,11 @@ navigator.getUserMedia({
 }, function() {
     // Errors, gotta catch 'em all!
 });
-                    </code></pre>
+                    </code></pre><br>
+
+                    <p>Note: this method will be deprecated in the future and is replaced by:</p>
+
+                    <pre><code class="language-javascript">navigator.mediaDevices.getUserMedia({audio: true}).then(success, error);</code></pre>
                 </section>
 
                 <section>
