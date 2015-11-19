@@ -8,7 +8,7 @@ body {
 }
 
 .reveal {
-    background: #F5BB3A;
+    background: #16a085;
 }
 
 /* Typo */
@@ -195,7 +195,7 @@ body {
 	right: 0;
 	z-index: 2;
 
-	background: #F5BB3A;
+	background: #16a085;
 }
 
 .reveal .playground h2 {
