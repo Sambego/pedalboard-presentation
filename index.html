@@ -197,7 +197,8 @@ gainNode.connect(audioContext.destination);</code></pre>
 
                 <section>
                     <pre><code class="language-javascript">const convolverNode = audioContext.createConvolver();
-const irf fetch('path/to/impulse-response-file', {
+
+fetch('path/to/impulse-response-file', {
     method: 'get'
 }).then(response => {
     return response.arrayBuffer();
