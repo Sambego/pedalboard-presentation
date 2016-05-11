@@ -1,0 +1,264 @@
+/* Default mixins and settings
+ * ---------------------------------- */
+@import "../template/mixins";
+@import "../template/settings";
+
+/* Colors
+ * ---------------------------------- */
+$white: #ffffff;
+$black: #000000;
+$green: #16a085;
+$blue: #2980b9;
+
+/* Varibles
+ * ---------------------------------- */
+$backgroundColor: $green;
+
+$mainColor: $white;
+$headingColor: $white;
+
+$mainFontSize: 38px;
+$mainFont: 'Quicksand', sans-serif;
+$headingFont: 'Quicksand', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #2a76dd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 1.5em;
+$heading2Size: 1.3em;
+$heading3Size: 1.1em;
+$heading4Size: 1.0em;
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+
+/* Theme template
+ * ---------------------------------- */
+@import "../template/theme";
+
+/* background
+ * ---------------------------------- */
+body {
+    background: linear-gradient(45deg, $blue 0%, $green 100%);
+}
+
+/* Typography
+ * ---------------------------------- */
+.reveal {
+    h1,
+    h2 {
+        font-weight: normal;
+    }
+
+    ul {
+        margin: 0;
+        padding:0;
+        list-style: none;
+    }
+
+    a {
+        will-change: box-shadow;
+        transition: box-shadow .2s ease-in-out;
+
+        box-shadow: 0px 1px 0 0 $white;
+
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            box-shadow: 0px 2px 0 0 $white;
+
+            color: $white;
+        }
+    }
+}
+
+/* Images
+ * ---------------------------------- */
+.reveal {
+    section {
+        img {
+            width: 100%;
+            margin: 0;
+
+            background: none;
+
+            border: none;
+            box-shadow: none;
+        }
+    }
+}
+
+/* waveform
+ * ---------------------------------- */
+ .waveform {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+
+    transform: translateY(-50%);
+ }
+
+ .waveform__path {
+    fill: none;
+
+    stroke: rgba($white, .6);
+    stroke-width: 4px;
+ }
+
+/* Caption
+ * ---------------------------------- */
+.reveal {
+    .caption {
+        position: fixed;
+        left: 0;
+        bottom: 3rem;
+
+        display: none;
+        padding: .5rem;
+
+        background: rgba($black, .7);
+
+        color: $white;
+        font-size: .8rem;
+
+        &__link {
+            box-shadow: 1px 1px 0 0 $white;
+
+            color: $white;
+            text-decoration: 0;
+        }
+    }
+}
+
+/* Note
+ * ---------------------------------- */
+.reveal {
+    .note {
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+
+/* Emphasis
+ * ---------------------------------- */
+.reveal {
+    .emphasis {
+        padding: 0 .2rem;
+
+        background: rgba($white, .2);
+
+        border: 1px solid rgba($white, .4);
+    }
+}
+
+/* Icons
+ * ---------------------------------- */
+.icon--mwl {
+    display: inline-block;
+    width: 2.3rem;
+    height: 2.3rem;
+
+    background: transparent url('../../img/madewithlove.svg') 0 .625rem no-repeat;
+    background-size: 100%
+}
+
+/* Progress
+ * ---------------------------------- */
+.reveal {
+    .progress {
+        background: $white;
+
+        span {
+            background: linear-gradient(45deg, $blue 0%, $green 100%);
+        }
+    }
+}
+
+/* Oscilloscope
+ * ---------------------------------- */
+.reveal {
+    .oscilloscope {
+        width: 800px;
+        height: 400px;
+        margin: 0 auto;
+
+        .oscilloscope__wave {
+            fill: none;
+
+            stroke: $white;
+            stroke-width: 4px;
+        }
+    }
+}
+
+/* Button
+ * ---------------------------------- */
+.reveal {
+    .button {
+        will-change: box-shadow;
+        transition: box-shadow .2s ease-in-out;
+
+        display: inline-block;
+        padding: .5rem;
+
+        background: none;
+
+        border: 0;
+        box-shadow: 2px 2px 0 0 $white inset, -2px -2px 0 0 $white inset, 2px -2px 0 0 $white inset, -2px 2px 0 0 $white inset;
+        outline: none;
+
+        color: $white;
+        font-size: 1rem;
+
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 3px 3px 0 0 $white inset, -3px -3px 0 0 $white inset, 3px -3px 0 0 $white inset, -3px 3px 0 0 $white inset;
+        }
+    }
+}
+
+/* Footer
+ * ---------------------------------- */
+.reveal {
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        height: 1rem;
+        padding: 1rem 2rem;
+
+        background: rgba($white, .9);
+
+        .link {
+            float: left;
+
+            box-shadow: none;
+
+            font-size: 1rem;
+            color: darken($blue, 15);
+
+            &--github {
+                float: right;
+            }
+        }
+    }
+}
+
+/* Playground
+ * ---------------------------------- */
+.playground {
+    display: none;
+}

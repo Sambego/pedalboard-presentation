@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
         <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/sam.css" id="theme">
+        <link rel="stylesheet" href="css/theme/sambego.css" id="theme">
 
         <!-- Code syntax highlighting -->
         <link rel="stylesheet" href="plugin/prism/prism.css">
@@ -52,143 +52,170 @@
                     <h1>Web-audio-api</h1>
                 </section>
 
-                <section>
+                <section data-background="img/sam.png" data-background-size="30%" data-background-repeat="no-repeat" data-background-position="right calc(100% - 3rem)">
                     <h2>Sam Bellen</h2>
 
                     <ul>
-                        <li>Front-end developer</li>
-                        <li>Kunstmaan</li>
-                        <li>@sambego</li>
-                        <li>github.com/sambego</li>
+                        <li><i class="icon--mwl"></i> madewithlove</li>
+                        <li><i class="fa fa-twitter"></i> @sambego</li>
+                        <li><i class="fa fa-github"></i> github.com/sambego</li>
                     </ul>
-
-                    <img src="img/sam.png" class="img--sam" alt="Sam Bellen">
                 </section>
 
-                <section>
-                    <div class="instagram">
-                        <blockquote class="instagram-media" data-instgrm-version="5" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAGFBMVEUiIiI9PT0eHh4gIB4hIBkcHBwcHBwcHBydr+JQAAAACHRSTlMABA4YHyQsM5jtaMwAAADfSURBVDjL7ZVBEgMhCAQBAf//42xcNbpAqakcM0ftUmFAAIBE81IqBJdS3lS6zs3bIpB9WED3YYXFPmHRfT8sgyrCP1x8uEUxLMzNWElFOYCV6mHWWwMzdPEKHlhLw7NWJqkHc4uIZphavDzA2JPzUDsBZziNae2S6owH8xPmX8G7zzgKEOPUoYHvGz1TBCxMkd3kwNVbU0gKHkx+iZILf77IofhrY1nYFnB/lQPb79drWOyJVa/DAvg9B/rLB4cC+Nqgdz/TvBbBnr6GBReqn/nRmDgaQEej7WhonozjF+Y2I/fZou/qAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://instagram.com/p/z13H6WiPD1/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Een foto die is geplaatst door Sam Bellen (@sambego)</a> op <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2015-03-05T09:49:33+00:00">5 Mrt 2015 om 1:49 PST</time></p></div></blockquote>
-                        <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+                <section data-background="img/pedalboard.jpg">
+                    <div class="caption">
+                        Picture by: <a href="https://flic.kr/p/pCCNik" class="caption__link">PatrikSecen</a>
                     </div>
                 </section>
 
                 <section>
-                    <h2>Pedalboard</h2>
-
-                    <ul>
-                        <li>Access the microphone with <pre class="inline">navigator.getUserMedia()</pre></li>
-                        <li>Alter sounds with the web-audio-api</li>
-                        <li>Controll all of this with the web-midi-api</li>
-                    </ul>
+                    <h1>1. Get the guitar's sound in the browser</h1>
                 </section>
 
                 <section>
-                    <h2>Get the user's microphone sound</h2>
-
-                    <pre><code class="language-javascript">navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ...;
-
-navigator.getUserMedia({
+                    <pre><code class="language-javascript">navigator.getUserMedia({
     audio: true
-}, function(stream) {
-    // Do something with the sound.
-}, function() {
+}, stream => {
+    // We've got a stream of the user's audio input device.
+}, error => {
     // Errors, gotta catch 'em all!
 });
                     </code></pre><br>
-
-                    <p>Note: this method will be deprecated in the future and is replaced by:</p>
-
-                    <pre><code class="language-javascript">navigator.mediaDevices.getUserMedia({audio: true}).then(success, error);</code></pre>
                 </section>
 
                 <section>
-                    <h2>Add effects to the guitar sound</h2>
-
-                    <p>Start by creating a new audio-context.</p>
-
-                    <pre><code class="language-javascript">var audioContext = new AudioContext();</code></pre>
+                    <pre><code class="language-javascript">navigator.mediaDevices.getUserMedia({
+    audio: true
+}).then(stream => {
+    // We've got a stream of the user's audio input device.
+}, error => {
+    // Errors, gotta catch 'em all!
+});</code></pre>
+                    <p class="note">
+                        Only works in Firefox and in Chrome behind the <span class="emphasis">experimental-web-platform-features</span> flag.
+                    </p>
                 </section>
 
                 <section>
-                    <h2>Create our basic sound chain</h2>
-
-                    <p>The sound signal is passed from node to node, untill it reaches the last one.</p>
-
-                    <pre><code class="language-javascript">var inputNode = audioContext.createMediaStreamSource(stream);
-    inputNode.connect(audioContext.destination);</code></pre>
+                    <h1>2. Add effects to the guitar's sound</h1>
                 </section>
 
                 <section>
-                    <h2>Volume pedal</h2>
+                    <pre><code class="language-javascript">const audioContext = new AudioContext();</code></pre>
+                </section>
 
-                    <pre><code class="language-javascript">var gainNode = audioContext.createGain();
-    gainNode.gain.value = .5; // The volume is 50%
+                <section>
+                    <pre><code class="language-javascript">const inputNode = audioContext.createMediaStreamSource(stream);
+      inputNode.connect(audioContext.destination);</code></pre>
+                </section>
+
+                <section>
+                    <h1>Volume pedal</h1>
+                </section>
+
+                <section>
+                    <pre><code class="language-javascript">const gainNode = audioContext.createGain();
+      gainNode.gain.value = .5; // The volume is 50%
 
 inputNode.connect(gainNode);
 gainNode.connect(audioContext.destination);</code></pre>
-
-                    <a class="js-toggle-playground link link--example" data-content="gain"><i class="fa fa-cogs"></i> Example</a>
                 </section>
 
                 <section>
-                    <h2>Distortion pedal</h2>
+                    <div class="js-oscilloscope--gain oscilloscope"></div>
 
-                    <pre><code class="language-javascript">var waveShaperNode = audioContext.createWaveShaper();
-    waveShaperNode.oversample = '4x';
-    waveShaperNode.curve = fancyMathToCalculateCurve();
-
-inputNode.connect(waveShaperNode);
-waveShaperNode.connect(audioContext.destination);</code></pre>
-
-                    <a class="js-toggle-playground link link--example" data-content="waveShaper"><i class="fa fa-cogs"></i> Example</a>
-
-                    <p>An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a>.</p>
+                    <button class="js-button--gain button" data-gain="1">100%</button>
+                    <button class="js-button--gain button" data-gain=".5">50%</button>
+                    <button class="js-button--gain button" data-gain="1.5">1.5</button>
                 </section>
 
                 <section>
-                    <h2>Delay pedal</h2>
-
-                    <pre><code class="language-javascript">var delayNode = audioContext.createDelay();
-    delayNode.delayTime.value = 1; // 1 second delay
-
-inputNode.connect(delayNode);
-delayNode.connect(audioContext.destination);</code></pre>
-                    <a class="js-toggle-playground link link--example" data-content="delay"><i class="fa fa-cogs"></i> Example</a>
+                    <img src="img/Volume.svg" alt="Volume chain" />
                 </section>
 
                 <section>
-                    <h2>Flanger pedal</h2>
-
-                    <pre><code class="language-javascript">var oscillatorNode = audioContext.createOscillator();
-    oscillatorNode.type = 'sine';
-    oscillatorNode.frequency.value = 1000; // 1000Hz
-
-inputNode.connect(oscillatorNode);
-oscillatorNode.connect(audioContext.destination);</code></pre>
-                    <a class="js-toggle-playground link link--example" data-content="oscillator"><i class="fa fa-cogs"></i> Example</a>
+                    <h1>Distortion pedal</h1>
                 </section>
 
                 <section>
-                    <h2>Reverb pedal</h2>
+                    <pre><code class="language-javascript">const waveShaperNode = audioContext.createWaveShaper();
+      waveShaperNode.oversample = '4x';
+      waveShaperNode.curve = fancyMathToCalculateCurve();</code></pre>
 
-                    <pre><code class="language-javascript">// The audio stream is just a stream of an audio file (hall_reverb.ogg)
-
-var buffer;
-audioContext.decodeAudioData(audioStream.data, function(buffer) {
-    buffer = buffer
-};
-
-var convolverNode = audioContext.createConvolver();
-    convolverNode.buffer = buffer;
-
-inputNode.connect(convolverNode);
-convolverNode.connect(audioContext.destination);</code></pre>
-
-                    <p>Impulse response file by <a href="https://github.com/cwilso/WebAudio">Chris Wilson</a></p>
+                    <p class="note">An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a>.</p>
                 </section>
 
                 <section>
-                    <h2>Other nodes</h2>
+                    <img src="img/Distortion.svg" alt="Distortion chain" />
+                </section>
+
+                <section>
+                    <h1>Delay pedal</h1>
+                </section>
+
+                <section>
+                    <pre><code class="language-javascript">const delayNode = audioContext.createDelay();
+      delayNode.delayTime.value = 1; // 1 second delay</code></pre>
+                </section>
+
+                <section>
+                    <img src="img/Delay.svg" alt="Delay chain" />
+                </section>
+
+                <section>
+                    <h1>Flanger pedal</h1>
+                </section>
+
+                <section>
+                    <pre><code class="language-javascript">const oscillatorNode = audioContext.createOscillator();
+      oscillatorNode.type = 'sine';
+      oscillatorNode.frequency.value = 1000; // 1000Hz</code></pre>
+                </section>
+
+                <section>
+                    <div class="js-oscilloscope--oscillator oscilloscope"></div>
+
+                    <button class="js-button--oscillator-type button" data-type="sine">Sine</button>
+                    <button class="js-button--oscillator-type button" data-type="square">Square</button>
+                    <button class="js-button--oscillator-type button" data-type="triangle">Triangle</button>
+                    <button class="js-button--oscillator-type button" data-type="sawtooth">Sawtooth</button>
+
+                    <button class="js-button--oscillator-speed button" data-speed="400">400Hz</button>
+                    <button class="js-button--oscillator-speed button" data-speed="1000">1000Hz</button>
+                    <button class="js-button--oscillator-speed button" data-speed="2000">2000Hz</button>
+
+                    <button class="js-button--oscillator-sound button">Sound</button>
+                </section>
+
+                <section>
+                    <img src="img/Flanger.svg" alt="Flanger chain" />
+                </section>
+
+                <section>
+                    <h1>Reverb pedal</h1>
+                </section>
+
+                <section>
+                    <pre><code class="language-javascript">const convolverNode = audioContext.createConvolver();
+const irf fetch('path/to/impulse-response-file', {
+    method: 'get'
+}).then(response => {
+    return response.arrayBuffer();
+}).then(buffer => {
+    audioContext.decodeAudioData(audioStream, buffer => {
+        convolverNode.buffer = buffer;
+    };
+});</code></pre>
+
+                    <p class="note">Impulse response file by <a href="https://github.com/cwilso/WebAudio">Chris Wilson</a></p>
+                </section>
+
+                <section>
+                    <img src="img/Reverb.svg" alt="Reverb chain" />
+                </section>
+
+                <section>
+                    <h1>Other nodes</h1>
 
                     <ul>
                         <li>AnalyserNode</li>
@@ -202,7 +229,17 @@ convolverNode.connect(audioContext.destination);</code></pre>
                 </section>
 
                 <section>
-                    <h1><a href="http://0.0.0.0:9000/" target="_blank">Test test, one two, test</a></h1>
+                    <h1><a href="http://localhost:8080/" target="_blank">Test test, one two, test</a></h1>
+                </section>
+
+                <section>
+                    <h1>What if we don't have our hands available to controll the mouse?</h1>
+                </section>
+
+                <section data-background="img/midi-contoller.jpg"></section>
+
+                <section>
+                    <img src="img/Midi.svg" alt="Midi chain" />
                 </section>
 
                 <section>
@@ -210,32 +247,26 @@ convolverNode.connect(audioContext.destination);</code></pre>
                 </section>
 
                 <section>
-                    <h2>Using the web-midi-api to communicate with external hardware</h2>
-
-                    <pre><code class="language-javascript">navigator.requestMIDIAccess().then(function(midi) {
-    var inputs = midi.inputs.values(),
-        devices = [],
-        i;
+                    <pre><code class="language-javascript">navigator.requestMIDIAccess().then(midi => {
+    const inputs = midi.inputs.values(),
+          devices = [],
+          i;
 
     for (i = inputs.next(); i && !i.done; i = inputs.next()) {
         devices.push(i.value);
     }
 
-    devices[0].onmidimessage = function(message) {
-        // Incomming message from the midi-device
+    devices[0].onmidimessage = message => {
+        // Incomming message from the first midi-device
     };
 });</code></pre>
                 </section>
 
                 <section>
-                    <h1>We're hiring!</h1><br>
-                    <a href="http://www.kunstmaan.be/jobs" target="_blank">http://www.kunstmaan.be/jobs</a>
-                </section>
-
-                <section>
                     <h1>Thank you!</h1><br>
-                    <a href="https://github.com/sambego/pedalboard" target="_blank">https://github.com/sambego/pedalboard</a><br><br>
-                    <a href="http://sambego.github.io/oscilloscope.js" target="_blank">http://sambego.github.io/oscilloscope.js</a><br><br>
+                    <a href="https://github.com/sambego/audio-effects" target="_blank">https://github.com/sambego/audio-effects</a><br><br>
+                    <a href="https://sambego.github.io/pedalboard" target="_blank">https://sambego.github.io/pedalboard</a><br><br>
+                    <a href="https://sambego.github.io/oscilloscope.js/" target="_blank">https://sambego.github.io/oscilloscope.js</a><br><br>
                     <a href="https://sambego.github.io/pedalboard-presentation/" target="_blank">https://sambego.github.io/pedalboard-presentation</a>
                 </section>
             </div>
@@ -244,13 +275,6 @@ convolverNode.connect(audioContext.destination);</code></pre>
                 <a href="https://twitter.com/sambego" class="link link--twitter"><i class="fa fa-twitter"></i> @sambego</a>
                 <a href="https://github.com/sambego" class="link link--github"><i class="fa fa-github"></i> Sambego</a>
             </footer>
-
-            <div class="js-playground playground">
-                <h2>oscilloscope</h2>
-                <div class="js-audio-playground audio-playground"></div>
-                <a class="js-toggle-playground playground__toggle"><i class="fa fa-times"></i></a>
-            </div>
-
         </div>
 
         <script src="plugin/prism/prism.js"></script>
@@ -258,11 +282,9 @@ convolverNode.connect(audioContext.destination);</code></pre>
         <script src="js/reveal.js"></script>
         <script src="js/waveform.js"></script>
         <script src="js/oscilloscope.js"></script>
-        <script src="js/playground.js"></script>
-        <script src="js/togglePlayground.js"></script>
+        <script src="js/createOscilloscopes.js"></script>
 
         <script>
-
             // Full list of configuration options available at:
             // https://github.com/hakimel/reveal.js#configuration
             Reveal.initialize({
@@ -283,13 +305,44 @@ convolverNode.connect(audioContext.destination);</code></pre>
                 ]
             });
 
-
             Reveal.addEventListener('ready', function(event) {
                 document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
+
+                if (event.indexh === 11) {
+                    createGainOscilloscope();
+                }
+
+                if (event.indexh === 21) {
+                    createOscilloscope();
+                }
+
+                if (event.indexh !== 11) {
+                    destroyGainOscilloscope();
+                }
+
+                if (event.indexh !== 21) {
+                    destroyOscilloscope();
+                }
             });
 
             Reveal.addEventListener('slidechanged', function(event) {
                 document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
+
+                if (event.indexh === 11) {
+                    createGainOscilloscope();
+                }
+
+                if (event.indexh === 21) {
+                    createOscilloscope();
+                }
+
+                if (event.indexh !== 11) {
+                    destroyGainOscilloscope();
+                }
+
+                if (event.indexh !== 21) {
+                    destroyOscilloscope();
+                }
             });
         </script>
     </body>
