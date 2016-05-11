@@ -229,6 +229,28 @@ const irf fetch('path/to/impulse-response-file', {
                 </section>
 
                 <section>
+                    <h1>audio-effects</h1>
+                    <a href="https://github.com/sambego/audio-effects" target="_blank">https://github.com/sambego/audio-effects</a>
+                </section>
+
+                <section>
+                    <pre><code class="language-javascript">import {Input, Distortion, Delay, Output} from 'audio-effects';
+
+const audioContext = new AudioContext();
+const input = new Input(audioContext);
+const distortion = new Distortion(audioContext);
+const delay = new Delay(audioContext);
+const output = new Output(audioContext);
+
+// Get the user's audio input
+input.getUserMedia();
+
+// Chain it all together
+input.connect(distortion).connect(delay).connect(output);
+</code></pre>
+                </section>
+
+                <section>
                     <h1><a href="http://localhost:8080/" target="_blank">Test test, one two, test</a></h1>
                 </section>
 
