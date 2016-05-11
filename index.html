@@ -202,7 +202,7 @@ const irf fetch('path/to/impulse-response-file', {
 }).then(response => {
     return response.arrayBuffer();
 }).then(buffer => {
-    audioContext.decodeAudioData(audioStream, buffer => {
+    audioContext.decodeAudioData(buffer, buffer => {
         convolverNode.buffer = buffer;
     };
 });</code></pre>
