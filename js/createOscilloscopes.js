@@ -91,8 +91,6 @@ const createOscilloscope = () => {
     const oscillator = audioContext.createOscillator();
     const oscilloscope = new Oscilloscope('.js-oscilloscope--oscillator', audioContext);
 
-    let sound = false;
-
     oscillator.type = 'sine';
     oscillator.frequency.value = 400;
     oscillator.start();
@@ -114,13 +112,7 @@ const createOscilloscope = () => {
     });
 
     document.querySelector('.js-button--oscillator-sound').addEventListener('mouseup', () => {
-        if (sound) {
-            oscilloscope.analyserNode.disconnect()
-        } else {
-            oscilloscope.analyserNode.connect(audioContext.destination);
-        }
-
-        sound = !sound;
+        oscilloscope.toggleAudio();
     });
 }
 
