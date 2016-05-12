@@ -73,6 +73,10 @@
                 </section>
 
                 <section>
+                    <pre><code class="language-javascript">const audioContext = new AudioContext();</code></pre>
+                </section>
+
+                <section>
                     <pre><code class="language-javascript">navigator.getUserMedia({
     audio: true
 }, stream => {
@@ -94,10 +98,6 @@
                     <p class="note">
                         Only works in Firefox and in Chrome behind the <span class="emphasis">experimental-web-platform-features</span> flag.
                     </p>
-                </section>
-
-                <section>
-                    <pre><code class="language-javascript">const audioContext = new AudioContext();</code></pre>
                 </section>
 
                 <section>
@@ -143,6 +143,12 @@ gainNode.connect(audioContext.destination);</code></pre>
       waveShaperNode.curve = fancyMathToCalculateCurve();</code></pre>
 
                     <p class="note">An example of an algorithm to calculate a distortion curve can be found <a href="http://stackoverflow.com/questions/22312841/waveshaper-node-in-webaudio-how-to-emulate-distortion">here</a>.</p>
+                </section>
+
+                <section>
+                    <div class="js-oscilloscope--waveshaper oscilloscope"></div>
+
+                    <button class="js-button--waveshaper button">Toggle waveshaper</button>
                 </section>
 
                 <section>
@@ -335,7 +341,11 @@ input.connect(distortion).connect(delay).connect(output);
                     createGainOscilloscope();
                 }
 
-                if (event.indexh === 21) {
+                if (event.indexh === 15) {
+                    createWaveshaperOscilloscope();
+                }
+
+                if (event.indexh === 22) {
                     createOscilloscope();
                 }
 
@@ -343,7 +353,11 @@ input.connect(distortion).connect(delay).connect(output);
                     destroyGainOscilloscope();
                 }
 
-                if (event.indexh !== 21) {
+                if (event.indexh !== 15) {
+                    destroyWaveshaperOscilloscope();
+                }
+
+                if (event.indexh !== 22) {
                     destroyOscilloscope();
                 }
             });
@@ -355,7 +369,11 @@ input.connect(distortion).connect(delay).connect(output);
                     createGainOscilloscope();
                 }
 
-                if (event.indexh === 21) {
+                if (event.indexh === 15) {
+                    createWaveshaperOscilloscope();
+                }
+
+                if (event.indexh === 22) {
                     createOscilloscope();
                 }
 
@@ -363,7 +381,11 @@ input.connect(distortion).connect(delay).connect(output);
                     destroyGainOscilloscope();
                 }
 
-                if (event.indexh !== 21) {
+                if (event.indexh !== 15) {
+                    destroyWaveshaperOscilloscope();
+                }
+
+                if (event.indexh !== 22) {
                     destroyOscilloscope();
                 }
             });
