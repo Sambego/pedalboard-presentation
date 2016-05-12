@@ -95,7 +95,6 @@ Oscilloscope.prototype.connect = function(node) {
  * Connect the analyser-node to the audio-context' destination
  */
 Oscilloscope.prototype.toggleAudio = function() {
-    console.log(this.hasAudio);
     if (!!this.hasAudio) {
         this.analyserNode.disconnect();
     } else {
