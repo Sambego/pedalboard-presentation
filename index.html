@@ -62,10 +62,21 @@
                     </ul>
                 </section>
 
+                <section>
+                    <h1>I ❤️ guitar pedals!</h1>
+                </section>
+
                 <section data-background="img/pedalboard.jpg">
-                    <div class="caption">
-                        Picture by: <a href="https://flic.kr/p/pCCNik" class="caption__link">PatrikSecen</a>
-                    </div>
+                </section>
+
+                <section data-background="img/pcb.jpg">
+                </section>
+
+                <section data-background="img/drone.jpg">
+                </section>
+
+                <section>
+                    <h1>So, is this possible in in the browser?</h1>
                 </section>
 
                 <section>
@@ -96,7 +107,7 @@
     // Errors, gotta catch 'em all!
 });</code></pre>
                     <p class="note">
-                        Only works in Firefox and in Chrome behind the <span class="emphasis">experimental-web-platform-features</span> flag.
+                        Only works in Firefox and in Chrome!
                     </p>
                 </section>
 
@@ -337,27 +348,27 @@ input.connect(distortion).connect(delay).connect(output);
             Reveal.addEventListener('ready', function(event) {
                 document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
 
-                if (event.indexh === 11) {
+                if (event.indexh === 15) {
                     createGainOscilloscope();
                 }
 
-                if (event.indexh === 15) {
+                if (event.indexh === 19) {
                     createWaveshaperOscilloscope();
                 }
 
-                if (event.indexh === 22) {
+                if (event.indexh === 26) {
                     createOscilloscope();
                 }
 
-                if (event.indexh !== 11) {
+                if (event.indexh !== 15) {
                     destroyGainOscilloscope();
                 }
 
-                if (event.indexh !== 15) {
+                if (event.indexh !== 19) {
                     destroyWaveshaperOscilloscope();
                 }
 
-                if (event.indexh !== 22) {
+                if (event.indexh !== 26) {
                     destroyOscilloscope();
                 }
             });
@@ -365,27 +376,27 @@ input.connect(distortion).connect(delay).connect(output);
             Reveal.addEventListener('slidechanged', function(event) {
                 document.querySelector('.js-waveform').style.display = (event.indexh === 0 ? 'block' : 'none');
 
-                if (event.indexh === 11) {
+                if (event.indexh === 15) {
                     createGainOscilloscope();
                 }
 
-                if (event.indexh === 15) {
+                if (event.indexh === 19) {
                     createWaveshaperOscilloscope();
                 }
 
-                if (event.indexh === 22) {
+                if (event.indexh === 26) {
                     createOscilloscope();
                 }
 
-                if (event.indexh !== 11) {
+                if (event.indexh !== 15) {
                     destroyGainOscilloscope();
                 }
 
-                if (event.indexh !== 15) {
+                if (event.indexh !== 19) {
                     destroyWaveshaperOscilloscope();
                 }
 
-                if (event.indexh !== 22) {
+                if (event.indexh !== 26) {
                     destroyOscilloscope();
                 }
             });
