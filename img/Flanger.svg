@@ -1,97 +1,97 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="960px" height="248px" viewBox="0 0 960 248" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
     <title>Flanger</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Flanger" transform="translate(3.000000, 3.000000)">
             <g id="Input-node" transform="translate(35.000000, 83.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="122" height="56" rx="8"></rect>
-                <text id="Input" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="123" height="57" rx="8"></rect>
+                <text id="Input" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="30.408" y="37">Input</tspan>
                 </text>
             </g>
             <g id="Oscillator-node" transform="translate(0.000000, 185.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="157" height="56" rx="8"></rect>
-                <text id="Oscillator" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="158" height="57" rx="8"></rect>
+                <text id="Oscillator" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="22.5154426" y="37">Oscillator</tspan>
                 </text>
             </g>
             <g id="Gain-node" transform="translate(237.000000, 83.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="122" height="56" rx="8"></rect>
-                <text id="Gain" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="123" height="57" rx="8"></rect>
+                <text id="Gain" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="33.456" y="37">Gain</tspan>
                 </text>
             </g>
             <g id="Output-node" transform="translate(832.000000, 0.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="122" height="56" rx="8"></rect>
-                <text id="Output" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="123" height="57" rx="8"></rect>
+                <text id="Output" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="19.068" y="37">Output</tspan>
                 </text>
             </g>
             <g id="Line" transform="translate(158.000000, 102.000000)">
-                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#FFFFFF" stroke-linecap="square"></path>
-                <path d="M31,17 L31,0 L48,8.5 L31,17 Z" id="Triangle-1" fill="#FFFFFF"></path>
+                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#000000" stroke-linecap="square"></path>
+                <polygon id="Triangle-1" fill="#000000" points="31 17 31 0 48 8.5"></polygon>
             </g>
             <g id="Gain-node" transform="translate(237.000000, 185.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="122" height="56" rx="8"></rect>
-                <text id="Gain" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="123" height="57" rx="8"></rect>
+                <text id="Gain" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="33.456" y="37">Gain</tspan>
                 </text>
             </g>
             <g id="Line" transform="translate(158.000000, 204.000000)">
-                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#FFFFFF" stroke-linecap="square"></path>
-                <path d="M31,17 L31,0 L48,8.5 L31,17 Z" id="Triangle-1" fill="#FFFFFF"></path>
+                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#000000" stroke-linecap="square"></path>
+                <polygon id="Triangle-1" fill="#000000" points="31 17 31 0 48 8.5"></polygon>
             </g>
             <g id="Line" transform="translate(421.582117, 196.176741) rotate(-27.000000) translate(-421.582117, -196.176741) translate(357.082117, 166.176741)">
-                <path d="M4.55202211,18.7228876 C4.55202211,18.7228876 80.9349491,60.6225039 128.513074,0.321722633" id="Path-42" stroke="#FFFFFF" stroke-dasharray="8,8"></path>
-                <path d="M47.2730789,40.0278444 L47.2730789,23.0278444 L64.2730789,31.5278444 L47.2730789,40.0278444 Z" id="Triangle-1" fill="#FFFFFF"></path>
-                <text id="delayTime" transform="translate(47.782958, 48.276363) rotate(1.000000) translate(-47.782958, -48.276363) " font-family="Quicksand-Light, Quicksand" font-size="18" font-weight="300" fill="#FFFFFF">
+                <path d="M4.55202211,18.7228876 C4.55202211,18.7228876 80.9349491,60.6225039 128.513074,0.321722633" id="Path-42" stroke="#000000" stroke-dasharray="8,8"></path>
+                <polygon id="Triangle-1" fill="#000000" points="47.2730789 40.0278444 47.2730789 23.0278444 64.2730789 31.5278444"></polygon>
+                <text id="delayTime" transform="translate(47.782958, 48.276363) rotate(1.000000) translate(-47.782958, -48.276363) " font-family="Quicksand-Light, Quicksand" font-size="18" font-weight="300" fill="#000000">
                     <tspan x="1.07295829" y="54.7763627">delayTime</tspan>
                 </text>
             </g>
             <g id="Gain-node" transform="translate(630.000000, 0.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="122" height="56" rx="8"></rect>
-                <text id="Gain" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="123" height="57" rx="8"></rect>
+                <text id="Gain" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="33.456" y="37">Gain</tspan>
                 </text>
             </g>
             <g id="Line" transform="translate(362.000000, 25.000000)">
-                <path d="M266.6875,0.8125 C266.6875,0.8125 124.445312,-3.82421875 0.10546875,61.5039062" id="Path-32" stroke="#FFFFFF"></path>
-                <path d="M133,21 L133,4 L150,12.5 L133,21 Z" id="Triangle-1" fill="#FFFFFF" transform="translate(141.500000, 12.500000) rotate(-12.000000) translate(-141.500000, -12.500000) "></path>
+                <path d="M266.6875,0.8125 C266.6875,0.8125 124.445312,-3.82421875 0.10546875,61.5039062" id="Path-32" stroke="#000000"></path>
+                <polygon id="Triangle-1" fill="#000000" transform="translate(141.500000, 12.500000) rotate(-12.000000) translate(-141.500000, -12.500000) " points="133 21 133 4 150 12.5"></polygon>
             </g>
             <g id="Gain-node" transform="translate(628.000000, 185.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="122" height="56" rx="8"></rect>
-                <text id="Gain" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="123" height="57" rx="8"></rect>
+                <text id="Gain" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="33.456" y="37">Gain</tspan>
                 </text>
             </g>
             <g id="Line" transform="translate(359.000000, 135.000000)">
-                <path d="M267.6875,75.8125 C267.6875,75.8125 78.5898438,95.9492165 0.91015625,0.238282159" id="Path-32" stroke="#FFFFFF"></path>
-                <path d="M131.210625,77.2106248 L131.210625,60.2106248 L148.210625,68.7106248 L131.210625,77.2106248 Z" id="Triangle-1" fill="#FFFFFF" transform="translate(139.710625, 68.710625) rotate(179.000000) translate(-139.710625, -68.710625) "></path>
+                <path d="M267.6875,75.8125 C267.6875,75.8125 78.5898438,95.9492165 0.91015625,0.238282159" id="Path-32" stroke="#000000"></path>
+                <polygon id="Triangle-1" fill="#000000" transform="translate(139.710625, 68.710625) rotate(179.000000) translate(-139.710625, -68.710625) " points="131.210625 77.2106248 131.210625 60.2106248 148.210625 68.7106248"></polygon>
             </g>
             <g id="Line" transform="translate(562.000000, 58.000000)">
-                <path d="M124.511719,0.738282159 C124.511719,0.738282159 99.0625,40.2382822 0.91015625,40.2382822" id="Path-32" stroke="#FFFFFF"></path>
-                <path d="M54.2106248,42.2106248 L54.2106248,25.2106248 L71.2106248,33.7106248 L54.2106248,42.2106248 Z" id="Triangle-1" fill="#FFFFFF" transform="translate(62.710625, 33.710625) rotate(-20.000000) translate(-62.710625, -33.710625) "></path>
+                <path d="M124.511719,0.738282159 C124.511719,0.738282159 99.0625,40.2382822 0.91015625,40.2382822" id="Path-32" stroke="#000000"></path>
+                <polygon id="Triangle-1" fill="#000000" transform="translate(62.710625, 33.710625) rotate(-20.000000) translate(-62.710625, -33.710625) " points="54.2106248 42.2106248 54.2106248 25.2106248 71.2106248 33.7106248"></polygon>
             </g>
             <g id="Line" transform="translate(564.000000, 118.000000)">
-                <path d="M118.347656,64.8671884 C118.347656,64.8671884 99.0625,3.23828216 0.91015625,3.23828216" id="Path-32" stroke="#FFFFFF"></path>
-                <path d="M51.3945585,20.3945585 L51.3945585,3.39455849 L68.3945585,11.8945585 L51.3945585,20.3945585 Z" id="Triangle-1" fill="#FFFFFF" transform="translate(59.894558, 11.894558) rotate(27.000000) translate(-59.894558, -11.894558) "></path>
+                <path d="M118.347656,64.8671884 C118.347656,64.8671884 99.0625,3.23828216 0.91015625,3.23828216" id="Path-32" stroke="#000000"></path>
+                <polygon id="Triangle-1" fill="#000000" transform="translate(59.894558, 11.894558) rotate(27.000000) translate(-59.894558, -11.894558) " points="51.3945585 20.3945585 51.3945585 3.39455849 68.3945585 11.8945585"></polygon>
             </g>
             <g id="Line" transform="translate(360.000000, 101.000000)">
-                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#FFFFFF" stroke-linecap="square"></path>
-                <path d="M31,17 L31,0 L48,8.5 L31,17 Z" id="Triangle-1" fill="#FFFFFF"></path>
+                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#000000" stroke-linecap="square"></path>
+                <polygon id="Triangle-1" fill="#000000" points="31 17 31 0 48 8.5"></polygon>
             </g>
             <g id="Delay-node" transform="translate(439.000000, 83.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="122" height="56" rx="8"></rect>
-                <text id="Delay" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="123" height="57" rx="8"></rect>
+                <text id="Delay" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="27.72" y="37">Delay</tspan>
                 </text>
             </g>
             <g id="Line" transform="translate(752.000000, 19.000000)">
-                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#FFFFFF" stroke-linecap="square"></path>
-                <path d="M31,17 L31,0 L48,8.5 L31,17 Z" id="Triangle-1" fill="#FFFFFF"></path>
+                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#000000" stroke-linecap="square"></path>
+                <polygon id="Triangle-1" fill="#000000" points="31 17 31 0 48 8.5"></polygon>
             </g>
         </g>
     </g>

@@ -7,8 +7,7 @@
  * ---------------------------------- */
 $white: #ffffff;
 $black: #000000;
-$green: #16a085;
-$blue: #2980b9;
+$green: #A8D4AD;
 
 /* Varibles
  * ---------------------------------- */
@@ -24,7 +23,7 @@ $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingFontWeight: 600;
-$linkColor: #2a76dd;
+$linkColor: $green;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
@@ -47,15 +46,30 @@ section.has-dark-background {
 /* background
  * ---------------------------------- */
 body {
-    background: linear-gradient(45deg, $blue 0%, $green 100%);
+    background: $green;
 }
 
 /* Typography
  * ---------------------------------- */
 .reveal {
+    color: $black;
+
     h1,
     h2 {
-        font-weight: normal;
+        color: $black;
+        font-weight: 700;
+
+        a {
+            box-shadow: none;
+        }
+    }
+
+    h1 {
+        font-size: 10rem
+    }
+
+    h2 {
+        font-size: 5rem;
     }
 
     ul {
@@ -68,15 +82,15 @@ body {
         will-change: box-shadow;
         transition: box-shadow .2s ease-in-out;
 
-        box-shadow: 0px 1px 0 0 $white;
+        box-shadow: 0px 1px 0 0 $black;
 
-        color: $white;
+        color: $black;
         text-decoration: none;
 
         &:hover {
-            box-shadow: 0px 2px 0 0 $white;
+            box-shadow: 0px 2px 0 0 $black;
 
-            color: $white;
+            color: $black;
         }
     }
 }
@@ -101,18 +115,16 @@ body {
  * ---------------------------------- */
  .waveform {
     position: fixed;
-    top: 50%;
+    bottom: -2rem;
     left: 0;
     z-index: 2;
-
-    transform: translateY(-56%);
  }
 
  .waveform__path {
     fill: none;
 
-    stroke: rgba($white, .6);
-    stroke-width: 4px;
+    stroke: $black;
+    stroke-width: 30px;
  }
 
 /* Caption
@@ -176,10 +188,10 @@ body {
  * ---------------------------------- */
 .reveal {
     .progress {
-        background: $white;
+        background: tranparent;
 
         span {
-            background: linear-gradient(45deg, $blue 0%, $green 100%);
+            background: rgba($black, .4);
         }
     }
 }
@@ -190,12 +202,16 @@ body {
     .oscilloscope {
         width: 800px;
         height: 400px;
-        margin: 0 auto;
+        margin: 0 auto 1rem auto;
+
+        background: rgba($white, .5);
+
+        border-radius: 10px;
 
         .oscilloscope__wave {
             fill: none;
 
-            stroke: $white;
+            stroke: $black;
             stroke-width: 4px;
         }
     }
@@ -205,25 +221,26 @@ body {
  * ---------------------------------- */
 .reveal {
     .button {
-        will-change: box-shadow;
-        transition: box-shadow .2s ease-in-out;
+        will-change: background;
+        transition: background .2s ease-in-out;
 
         display: inline-block;
         padding: .5rem;
 
-        background: none;
+        background: rgba($white, .5);
 
         border: 0;
-        box-shadow: 2px 2px 0 0 $white inset, -2px -2px 0 0 $white inset, 2px -2px 0 0 $white inset, -2px 2px 0 0 $white inset;
+        border-radius: 5px;
+
         outline: none;
 
-        color: $white;
+        color: $black;
         font-size: 1rem;
 
         cursor: pointer;
 
         &:hover {
-            box-shadow: 3px 3px 0 0 $white inset, -3px -3px 0 0 $white inset, 3px -3px 0 0 $white inset, -3px 3px 0 0 $white inset;
+            background: rgba($white, .7);
         }
     }
 }
@@ -240,15 +257,13 @@ body {
         height: 1rem;
         padding: 1rem 2rem;
 
-        background: rgba($white, .9);
-
         .link {
             float: left;
 
             box-shadow: none;
 
             font-size: 1rem;
-            color: darken($blue, 15);
+            color: $black;
 
             &--github {
                 float: right;
@@ -261,4 +276,57 @@ body {
  * ---------------------------------- */
 .playground {
     display: none;
+}
+
+/* Code
+ * ---------------------------------- */
+.reveal {
+    pre {
+        background: $white;
+
+        border-radius: 5px;
+        box-shadow: none;
+    }
+}
+
+/* Pedals
+ * ---------------------------------- */
+.reveal {
+    section {
+        img.pedal {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            &--distortion {
+                transform: translate(25rem, 0) scale(2) rotate(5deg);
+            }
+
+            &--delay {
+                transform: translate(17rem, 0) scale(2) rotate(5deg);
+            }
+
+            &--flanger {
+                transform: translate(20rem, 0) scale(2) rotate(5deg);
+            }
+
+            &--reverb {
+                transform: translate(25rem, 0) scale(2) rotate(5deg);
+            }
+        }
+    }
+}
+
+/* Cable
+ * ---------------------------------- */
+.cable {
+    position: absolute;
+    left: -1rem;
+    bottom: 2.5rem;
+
+    display: none;
+
+    &--visible {
+        display: block;
+    }
 }

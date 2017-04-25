@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="314px" height="760px" viewBox="0 0 314 760" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>pedal-volume</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Volume" transform="translate(6.000000, 6.000000)" stroke-width="12">
+            <path d="M0.394593502,729.791963 C0.394593502,729.791963 167.80284,773.219847 298.100174,724.411053 C302.327654,678.609243 301.530812,675.011843 301.530812,675.011843 L0.394593502,676.428818 L0.394593502,729.791963 Z" id="Path" stroke="#979797" fill="#838381"></path>
+            <path d="M6.18603114,18.9211361 C6.18603114,18.9211361 123.474038,-25.2553779 275.781888,22.3235282 C275.781888,25.4610272 301.680339,675.631338 301.680339,675.631338 C301.680339,675.631338 169.080993,744.303862 0.40793878,677.529642 C0.40793878,675.631338 6.18603114,18.9211361 6.18603114,18.9211361 Z" id="Path-3" stroke="#9D9D9C" fill="#323535"></path>
+        </g>
+    </g>
+</svg>

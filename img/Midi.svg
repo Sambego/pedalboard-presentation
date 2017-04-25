@@ -1,76 +1,76 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="936px" height="209px" viewBox="0 0 936 209" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="940px" height="213px" viewBox="0 0 940 213" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
     <title>Midi</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Midi" transform="translate(1.000000, 1.000000)">
+        <g id="Midi" transform="translate(3.000000, 3.000000)">
             <g id="Hardware">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="152" height="56" rx="8"></rect>
-                <text font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="153" height="57" rx="8"></rect>
+                <text font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="18.3029508" y="37">Hardware</tspan>
                 </text>
             </g>
             <g id="Hardware" transform="translate(526.000000, 0.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="152" height="56" rx="8"></rect>
-                <text id="Socket" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="153" height="57" rx="8"></rect>
+                <text id="Socket" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="36.2189508" y="37">Socket</tspan>
                     <tspan x="117.026951" y="37" font-family="QuicksandDash-Regular, Quicksand"></tspan>
                 </text>
             </g>
             <g id="Hardware" transform="translate(782.000000, 151.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="152" height="56" rx="8"></rect>
-                <text id="MIDI" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="153" height="57" rx="8"></rect>
+                <text id="MIDI" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="51.1469508" y="37">MIDI</tspan>
                     <tspan x="76.6229508" y="65"></tspan>
                 </text>
             </g>
             <g id="Hardware" transform="translate(501.000000, 151.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0.585365854" y="0" width="200.195122" height="56" rx="8"></rect>
-                <text id="Socket-server" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="0.0853658537" y="-0.5" width="201.195122" height="57" rx="8"></rect>
+                <text id="Socket-server" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="20.3233986" y="37">Socket server</tspan>
                 </text>
             </g>
             <g id="Tessel" transform="translate(230.000000, 0.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="216" height="56" rx="8"></rect>
-                <text id="Tessel2" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="217" height="57" rx="8"></rect>
+                <text id="Tessel2" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="47.7799827" y="37">Tessel2</tspan>
                 </text>
                 <g id="tessel-logo" transform="translate(139.000000, 13.000000)">
-                    <path d="M0.124360465,26.5832292 C0.124360465,25.8744792 0.692453488,25.2991667 1.3939186,25.2991667 C2.09574419,25.2991667 2.66383721,25.8744792 2.66383721,26.5832292 C2.66383721,27.29125 2.09574419,27.8669271 1.3939186,27.8669271 C0.692453488,27.8669271 0.124360465,27.29125 0.124360465,26.5832292 L0.124360465,26.5832292 Z" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M4.97477907,28.67375 L15.5,34.8195312 L23.2550465,30.2914062" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M4.97477907,28.67375 L3.23048837,27.6284896" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M30.2689767,27.6948437 C29.661593,28.0499479 28.8847907,27.8395833 28.5344186,27.225625 C28.1833256,26.6105729 28.3916744,25.8252604 28.9990581,25.4708854 C29.6057209,25.116875 30.3825233,25.3265104 30.7336163,25.9408333 C31.0843488,26.5555208 30.876,27.3404687 30.2689767,27.6948437 L30.2689767,27.6948437 Z" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M29.6338372,22.4010937 L29.6338372,10.1095312 L21.8784302,5.5803125" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M29.6427674,22.4010937 L29.6107674,24.4515104" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M0.163651163,26.5839583 C0.163651163,25.8752083 0.731744186,25.2991667 1.43284884,25.2991667 C2.13467442,25.2998958 2.70312791,25.8752083 2.70312791,26.5835938 C2.70312791,27.2919792 2.13467442,27.8672917 1.43284884,27.8672917 C0.731383721,27.8676563 0.162930233,27.2919792 0.163651163,26.5839583 L0.163651163,26.5839583 Z" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M5.0137093,28.6741146 L15.5382093,34.8202604 L23.2939767,30.2921354" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M5.0137093,28.6741146 L3.26977907,27.6284896" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M16.1340581,0.479427083 C16.7414419,0.833802083 16.9497907,1.61984375 16.5997791,2.23380208 C16.2483256,2.848125 15.4718837,3.058125 14.8645,2.70375 C14.2581977,2.34973958 14.0491279,1.56369792 14.3998605,0.949375 C14.7509535,0.335052083 15.5273953,0.124322917 16.1340581,0.479427083 L16.1340581,0.479427083 Z" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M11.9187791,3.68302083 L1.3939186,9.82807292 L1.3939186,18.8854167" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M11.9187791,3.68302083 L13.6865,2.67786458" id="Shape" stroke="#FFFFFF" stroke-width="3.5"></path>
-                    <path d="M22.7619302,12.9427083 L15.8078372,12.9427083 L15.8078372,25.7023958 L18.0225349,25.7023958 L18.0225349,16.2709896 L22.7619302,16.2709896 L22.7619302,12.9427083 Z" id="Shape" fill="#FFFFFF"></path>
-                    <path d="M8.23806977,12.9427083 L15.1921628,12.9427083 L15.1921628,25.7023958 L12.9774651,25.7023958 L12.9774651,16.2709896 L8.23806977,16.2709896 L8.23806977,12.9427083 Z" id="Shape" fill="#FFFFFF"></path>
+                    <path d="M0.124360465,26.5832292 C0.124360465,25.8744792 0.692453488,25.2991667 1.3939186,25.2991667 C2.09574419,25.2991667 2.66383721,25.8744792 2.66383721,26.5832292 C2.66383721,27.29125 2.09574419,27.8669271 1.3939186,27.8669271 C0.692453488,27.8669271 0.124360465,27.29125 0.124360465,26.5832292 L0.124360465,26.5832292 Z" id="Shape" stroke="#000000" stroke-width="3.5"></path>
+                    <polyline id="Shape" stroke="#000000" stroke-width="3.5" points="4.97477907 28.67375 15.5 34.8195312 23.2550465 30.2914062"></polyline>
+                    <path d="M4.97477907,28.67375 L3.23048837,27.6284896" id="Shape" stroke="#000000" stroke-width="3.5"></path>
+                    <path d="M30.2689767,27.6948437 C29.661593,28.0499479 28.8847907,27.8395833 28.5344186,27.225625 C28.1833256,26.6105729 28.3916744,25.8252604 28.9990581,25.4708854 C29.6057209,25.116875 30.3825233,25.3265104 30.7336163,25.9408333 C31.0843488,26.5555208 30.876,27.3404687 30.2689767,27.6948437 L30.2689767,27.6948437 Z" id="Shape" stroke="#000000" stroke-width="3.5"></path>
+                    <polyline id="Shape" stroke="#000000" stroke-width="3.5" points="29.6338372 22.4010937 29.6338372 10.1095312 21.8784302 5.5803125"></polyline>
+                    <path d="M29.6427674,22.4010937 L29.6107674,24.4515104" id="Shape" stroke="#000000" stroke-width="3.5"></path>
+                    <path d="M0.163651163,26.5839583 C0.163651163,25.8752083 0.731744186,25.2991667 1.43284884,25.2991667 C2.13467442,25.2998958 2.70312791,25.8752083 2.70312791,26.5835938 C2.70312791,27.2919792 2.13467442,27.8672917 1.43284884,27.8672917 C0.731383721,27.8676563 0.162930233,27.2919792 0.163651163,26.5839583 L0.163651163,26.5839583 Z" id="Shape" stroke="#000000" stroke-width="3.5"></path>
+                    <polyline id="Shape" stroke="#000000" stroke-width="3.5" points="5.0137093 28.6741146 15.5382093 34.8202604 23.2939767 30.2921354"></polyline>
+                    <path d="M5.0137093,28.6741146 L3.26977907,27.6284896" id="Shape" stroke="#000000" stroke-width="3.5"></path>
+                    <path d="M16.1340581,0.479427083 C16.7414419,0.833802083 16.9497907,1.61984375 16.5997791,2.23380208 C16.2483256,2.848125 15.4718837,3.058125 14.8645,2.70375 C14.2581977,2.34973958 14.0491279,1.56369792 14.3998605,0.949375 C14.7509535,0.335052083 15.5273953,0.124322917 16.1340581,0.479427083 L16.1340581,0.479427083 Z" id="Shape" stroke="#000000" stroke-width="3.5"></path>
+                    <polyline id="Shape" stroke="#000000" stroke-width="3.5" points="11.9187791 3.68302083 1.3939186 9.82807292 1.3939186 18.8854167"></polyline>
+                    <path d="M11.9187791,3.68302083 L13.6865,2.67786458" id="Shape" stroke="#000000" stroke-width="3.5"></path>
+                    <polygon id="Shape" fill="#000000" points="22.7619302 12.9427083 15.8078372 12.9427083 15.8078372 25.7023958 18.0225349 25.7023958 18.0225349 16.2709896 22.7619302 16.2709896"></polygon>
+                    <polygon id="Shape" fill="#000000" points="8.23806977 12.9427083 15.1921628 12.9427083 15.1921628 25.7023958 12.9774651 25.7023958 12.9774651 16.2709896 8.23806977 16.2709896"></polygon>
                 </g>
             </g>
             <g id="Line" transform="translate(152.000000, 19.000000)">
-                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#FFFFFF" stroke-linecap="square"></path>
-                <path d="M31,17 L31,0 L48,8.5 L31,17 Z" id="Triangle-1" fill="#FFFFFF"></path>
+                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#000000" stroke-linecap="square"></path>
+                <polygon id="Triangle-1" fill="#000000" points="31 17 31 0 48 8.5"></polygon>
             </g>
             <g id="Line" transform="translate(447.000000, 19.000000)">
-                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#FFFFFF" stroke-linecap="square"></path>
-                <path d="M31,17 L31,0 L48,8.5 L31,17 Z" id="Triangle-1" fill="#FFFFFF"></path>
+                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#000000" stroke-linecap="square"></path>
+                <polygon id="Triangle-1" fill="#000000" points="31 17 31 0 48 8.5"></polygon>
             </g>
             <g id="Line" transform="translate(703.000000, 171.000000)">
-                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#FFFFFF" stroke-linecap="square"></path>
-                <path d="M31,17 L31,0 L48,8.5 L31,17 Z" id="Triangle-1" fill="#FFFFFF"></path>
+                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#000000" stroke-linecap="square"></path>
+                <polygon id="Triangle-1" fill="#000000" points="31 17 31 0 48 8.5"></polygon>
             </g>
             <g id="Line" transform="translate(604.000000, 103.000000) rotate(-270.000000) translate(-604.000000, -103.000000) translate(558.500000, 94.500000)">
-                <path d="M0,8.5 L90.0013885,8.5" stroke="#FFFFFF" stroke-linecap="square" stroke-dasharray="8,8"></path>
-                <path d="M36,17 L36,0 L53,8.5 L36,17 Z" id="Triangle-1" fill="#FFFFFF"></path>
+                <path d="M0,8.5 L90.0013885,8.5" stroke="#000000" stroke-linecap="square" stroke-dasharray="8,8"></path>
+                <polygon id="Triangle-1" fill="#000000" points="36 17 36 0 53 8.5"></polygon>
             </g>
-            <text id="Wireless-connection" font-family="QuicksandDash-Regular, Quicksand" font-size="18" font-weight="300" fill="#FFFFFF">
+            <text id="Wireless-connection" font-family="QuicksandDash-Regular, Quicksand" font-size="18" font-weight="300" fill="#000000">
                 <tspan x="616.059" y="108">Wireless connection</tspan>
             </text>
         </g>

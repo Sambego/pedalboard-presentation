@@ -1,36 +1,36 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="601px" height="58px" viewBox="0 0 601 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="605px" height="62px" viewBox="0 0 605 62" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
     <title>Distortion</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Distortion" transform="translate(1.000000, 1.000000)">
+        <g id="Distortion" transform="translate(3.000000, 3.000000)">
             <g id="Input-node">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="122" height="56" rx="8"></rect>
-                <text id="Input" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="123" height="57" rx="8"></rect>
+                <text id="Input" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="30.408" y="37">Input</tspan>
                 </text>
             </g>
             <g id="Waveshaper-node" transform="translate(202.000000, 0.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="195" height="56" rx="8"></rect>
-                <text id="Waveshaper" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="196" height="57" rx="8"></rect>
+                <text id="Waveshaper" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="22.204" y="37">Waveshaper</tspan>
                 </text>
             </g>
             <g id="Output-node" transform="translate(477.000000, 0.000000)">
-                <rect id="Rectangle-1" stroke="#FFFFFF" x="0" y="0" width="122" height="56" rx="8"></rect>
-                <text id="Output" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#FFFFFF">
+                <rect id="Rectangle-1" stroke="#000000" x="-0.5" y="-0.5" width="123" height="57" rx="8"></rect>
+                <text id="Output" font-family="Quicksand-Light, Quicksand" font-size="24" font-weight="300" fill="#000000">
                     <tspan x="19.068" y="37">Output</tspan>
                 </text>
             </g>
             <g id="Line" transform="translate(123.000000, 19.000000)">
-                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#FFFFFF" stroke-linecap="square"></path>
-                <path d="M31,17 L31,0 L48,8.5 L31,17 Z" id="Triangle-1" fill="#FFFFFF"></path>
+                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#000000" stroke-linecap="square"></path>
+                <polygon id="Triangle-1" fill="#000000" points="31 17 31 0 48 8.5"></polygon>
             </g>
             <g id="Line" transform="translate(397.000000, 19.000000)">
-                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#FFFFFF" stroke-linecap="square"></path>
-                <path d="M31,17 L31,0 L48,8.5 L31,17 Z" id="Triangle-1" fill="#FFFFFF"></path>
+                <path d="M0.5,8.5 L77.5064926,8.5" stroke="#000000" stroke-linecap="square"></path>
+                <polygon id="Triangle-1" fill="#000000" points="31 17 31 0 48 8.5"></polygon>
             </g>
         </g>
     </g>

@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="79px" height="59px" viewBox="0 0 79 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
-    <title>madewithlove</title>
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="madewithlove">
-            <path d="M19.526,0.45 L0,19.977 L39.053,59.028 L78.105,19.977 L58.578,0.45 L39.053,19.977 L19.526,0.45 Z" id="Shape" fill="#FFFFFF"></path>
-            <path d="M39.053,20 L58.578,39.526 L78.105,20 L39.053,20 Z" id="Shape" fill="#E6E6E6"></path>
+        <g id="logo" fill-rule="nonzero">
+            <polygon id="Shape" fill="#252424" points="19.526 0.45 0 19.977 39.053 59.028 78.105 19.977 58.578 0.45 39.053 19.977"></polygon>
+            <polygon id="Shape" fill="#000000" points="39.053 20 58.578 39.526 78.105 20"></polygon>
         </g>
     </g>
 </svg>

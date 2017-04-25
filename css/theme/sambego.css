@@ -13,8 +13,8 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #16a085;
-  background-color: #16a085; }
+  background: #A8D4AD;
+  background-color: #A8D4AD; }
 
 .reveal {
   font-family: "Quicksand", sans-serif;
@@ -24,7 +24,7 @@ body {
 
 ::selection {
   color: #fff;
-  background: #98bdef;
+  background: #fdfefd;
   text-shadow: none; }
 
 .reveal .slides > section,
@@ -206,20 +206,20 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #2a76dd;
+  color: #A8D4AD;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #6ca0e8;
+  color: #dbeddd;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #1a53a1; }
+  background: #75bb7d; }
 
 /*********************************************
  * IMAGES
@@ -241,7 +241,7 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #2a76dd;
+  border-color: #A8D4AD;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -249,31 +249,31 @@ body {
  *********************************************/
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-  border-right-color: #2a76dd; }
+  border-right-color: #A8D4AD; }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-  border-left-color: #2a76dd; }
+  border-left-color: #A8D4AD; }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-  border-bottom-color: #2a76dd; }
+  border-bottom-color: #A8D4AD; }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-  border-top-color: #2a76dd; }
+  border-top-color: #A8D4AD; }
 
 .reveal .controls .navigate-left.enabled:hover {
-  border-right-color: #6ca0e8; }
+  border-right-color: #dbeddd; }
 
 .reveal .controls .navigate-right.enabled:hover {
-  border-left-color: #6ca0e8; }
+  border-left-color: #dbeddd; }
 
 .reveal .controls .navigate-up.enabled:hover {
-  border-bottom-color: #6ca0e8; }
+  border-bottom-color: #dbeddd; }
 
 .reveal .controls .navigate-down.enabled:hover {
-  border-top-color: #6ca0e8; }
+  border-top-color: #dbeddd; }
 
 /*********************************************
  * PROGRESS BAR
@@ -282,7 +282,7 @@ body {
   background: rgba(0, 0, 0, 0.2); }
 
 .reveal .progress span {
-  background: #2a76dd;
+  background: #A8D4AD;
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
@@ -290,28 +290,36 @@ body {
 /* background
  * ---------------------------------- */
 body {
-  background: linear-gradient(45deg, #2980b9 0%, #16a085 100%); }
+  background: #A8D4AD; }
 
 /* Typography
  * ---------------------------------- */
-.reveal h1,
-.reveal h2 {
-  font-weight: normal; }
-
-.reveal ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-
-.reveal a {
-  will-change: box-shadow;
-  transition: box-shadow .2s ease-in-out;
-  box-shadow: 0px 1px 0 0 #ffffff;
-  color: #ffffff;
-  text-decoration: none; }
-  .reveal a:hover {
-    box-shadow: 0px 2px 0 0 #ffffff;
-    color: #ffffff; }
+.reveal {
+  color: #000000; }
+  .reveal h1,
+  .reveal h2 {
+    color: #000000;
+    font-weight: 700; }
+    .reveal h1 a,
+    .reveal h2 a {
+      box-shadow: none; }
+  .reveal h1 {
+    font-size: 10rem; }
+  .reveal h2 {
+    font-size: 5rem; }
+  .reveal ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .reveal a {
+    will-change: box-shadow;
+    transition: box-shadow .2s ease-in-out;
+    box-shadow: 0px 1px 0 0 #000000;
+    color: #000000;
+    text-decoration: none; }
+    .reveal a:hover {
+      box-shadow: 0px 2px 0 0 #000000;
+      color: #000000; }
 
 /* Images
  * ---------------------------------- */
@@ -326,15 +334,14 @@ body {
  * ---------------------------------- */
 .waveform {
   position: fixed;
-  top: 50%;
+  bottom: -2rem;
   left: 0;
-  z-index: 2;
-  transform: translateY(-56%); }
+  z-index: 2; }
 
 .waveform__path {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.6);
-  stroke-width: 4px; }
+  stroke: #000000;
+  stroke-width: 30px; }
 
 /* Caption
  * ---------------------------------- */
@@ -377,37 +384,39 @@ body {
 /* Progress
  * ---------------------------------- */
 .reveal .progress {
-  background: #ffffff; }
+  background: tranparent; }
   .reveal .progress span {
-    background: linear-gradient(45deg, #2980b9 0%, #16a085 100%); }
+    background: rgba(0, 0, 0, 0.4); }
 
 /* Oscilloscope
  * ---------------------------------- */
 .reveal .oscilloscope {
   width: 800px;
   height: 400px;
-  margin: 0 auto; }
+  margin: 0 auto 1rem auto;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px; }
   .reveal .oscilloscope .oscilloscope__wave {
     fill: none;
-    stroke: #ffffff;
+    stroke: #000000;
     stroke-width: 4px; }
 
 /* Button
  * ---------------------------------- */
 .reveal .button {
-  will-change: box-shadow;
-  transition: box-shadow .2s ease-in-out;
+  will-change: background;
+  transition: background .2s ease-in-out;
   display: inline-block;
   padding: .5rem;
-  background: none;
+  background: rgba(255, 255, 255, 0.5);
   border: 0;
-  box-shadow: 2px 2px 0 0 #ffffff inset, -2px -2px 0 0 #ffffff inset, 2px -2px 0 0 #ffffff inset, -2px 2px 0 0 #ffffff inset;
+  border-radius: 5px;
   outline: none;
-  color: #ffffff;
+  color: #000000;
   font-size: 1rem;
   cursor: pointer; }
   .reveal .button:hover {
-    box-shadow: 3px 3px 0 0 #ffffff inset, -3px -3px 0 0 #ffffff inset, 3px -3px 0 0 #ffffff inset, -3px 3px 0 0 #ffffff inset; }
+    background: rgba(255, 255, 255, 0.7); }
 
 /* Footer
  * ---------------------------------- */
@@ -417,13 +426,12 @@ body {
   left: 0;
   right: 0;
   height: 1rem;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.9); }
+  padding: 1rem 2rem; }
   .reveal .footer .link {
     float: left;
     box-shadow: none;
     font-size: 1rem;
-    color: #1b557a; }
+    color: #000000; }
     .reveal .footer .link--github {
       float: right; }
 
@@ -431,3 +439,37 @@ body {
  * ---------------------------------- */
 .playground {
   display: none; }
+
+/* Code
+ * ---------------------------------- */
+.reveal pre {
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: none; }
+
+/* Pedals
+ * ---------------------------------- */
+.reveal section img.pedal {
+  position: absolute;
+  right: 0;
+  bottom: 0; }
+  .reveal section img.pedal--distortion {
+    transform: translate(25rem, 0) scale(2) rotate(5deg); }
+  .reveal section img.pedal--delay {
+    transform: translate(17rem, 0) scale(2) rotate(5deg); }
+  .reveal section img.pedal--flanger {
+    transform: translate(20rem, 0) scale(2) rotate(5deg); }
+  .reveal section img.pedal--reverb {
+    transform: translate(25rem, 0) scale(2) rotate(5deg); }
+
+/* Cable
+ * ---------------------------------- */
+.cable {
+  position: absolute;
+  left: -1rem;
+  bottom: 2.5rem;
+  display: none; }
+  .cable--visible {
+    display: block; }
+
+/*# sourceMappingURL=sambego.css.map */
