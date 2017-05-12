@@ -63,7 +63,7 @@
                 <polygon id="Triangle-1" fill="#000000" points="31 17 31 0 48 8.5"></polygon>
             </g>
             <g id="line" transform="translate(522.000000, 41.000000)">
-                <path d="M0.55078125,46.75 C0.55078125,46.75 25.3359375,2.2578125 81.0234375,2.2578125" id="Path-23"></path>
+                <path d="M0.55078125,46.75 C0.55078125,46.75 25.3359375,2.2578125 81.0234375,2.2578125" id="Path-23" stroke="#000000"></path>
                 <polygon id="Triangle-1" fill="#000000" transform="translate(40.500000, 12.500000) rotate(-33.000000) translate(-40.500000, -12.500000) " points="32 21 32 4 49 12.5"></polygon>
             </g>
         </g>
