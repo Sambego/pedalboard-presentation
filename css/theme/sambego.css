@@ -381,6 +381,13 @@ body {
   background: transparent url("../../img/madewithlove.svg") 0 0.625rem no-repeat;
   background-size: 100%; }
 
+.icon--fronteers {
+  display: inline-block;
+  width: 2.3rem;
+  height: 2.3rem;
+  background: transparent url("../../img/fronteers.svg") 0 0 no-repeat;
+  background-size: 100%; }
+
 /* Progress
  * ---------------------------------- */
 .reveal .progress {
