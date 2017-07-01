@@ -14,7 +14,10 @@ var waveform = waveform || !function() {
             toggleAudioSource,
             oscillatorNode,
             liveAudio = true,
-            waveWidth = window.innerWidth - 600,
+            plugWidth = 365,
+            scalePercentage = window.innerWidth / 1440,
+            scale = 'scale(' + scalePercentage + ')',
+            waveWidth = window.innerWidth - ((100 +  plugWidth) * scalePercentage),
             svg = document.createElementNS("http://www.w3.org/2000/svg", "svg"),
             wave = document.createElementNS("http://www.w3.org/2000/svg", 'path'),
             plug = document.createElementNS("http://www.w3.org/2000/svg", 'g'),
@@ -30,13 +33,14 @@ var waveform = waveform || !function() {
             wave.setAttribute('class', 'waveform__path');
 
             svg.setAttribute('width', window.innerWidth);
-            svg.setAttribute('height', 400);
+            svg.setAttribute('height', 400 * scalePercentage);
             svg.setAttribute('class', 'waveform__svg');
             svg.appendChild(wave);
 
             svg.appendChild(plug);
 
             plug.innerHTML = plugPaths;
+            wave.style.strokeWidth = (30 * scalePercentage) + 'px';
 
             document.querySelector('.js-waveform').appendChild(svg);
 
@@ -46,12 +50,12 @@ var waveform = waveform || !function() {
                 analyserNode.getByteTimeDomainData(dataArray);
 
                 dataArray.forEach(function(point, i) {
-                    p +=  (((waveWidth + (waveWidth / bufferLength))/ bufferLength) * i) + ' ' + (200 * (point / 128.0)) + ', ';
+                    p +=  (((waveWidth + (waveWidth / bufferLength))/ bufferLength) * i) + ' ' + ((200 * (point / 128.0)) * scalePercentage) + ', ';
 
                     if (i === bufferLength - 1) {
-                        var translate = 'translate(' + (((waveWidth + (waveWidth / bufferLength))/ bufferLength) * i) + ',' + ((200 * (point / 128.0)) - 30) + ')';
+                        var translate = 'translate(' + (((waveWidth + (waveWidth / bufferLength))/ bufferLength) * i) + ',' + (((200 * (point / 128.0)) - 30) * scalePercentage) + ')';
 
-                        plug.setAttribute('transform', translate);
+                        plug.setAttribute('transform', translate + ' ' + scale);
 
                         // console.log(plug.getAttribute('x'));
                     }

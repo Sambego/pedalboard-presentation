@@ -340,8 +340,7 @@ body {
 
 .waveform__path {
   fill: none;
-  stroke: #000000;
-  stroke-width: 30px; }
+  stroke: #000000; }
 
 /* Caption
  * ---------------------------------- */
@@ -470,17 +469,7 @@ body {
 /* Pedals
  * ---------------------------------- */
 .reveal section img.pedal {
-  position: absolute;
-  right: 0;
-  bottom: 0; }
-  .reveal section img.pedal--distortion {
-    transform: translate(25rem, 0) scale(2) rotate(5deg); }
-  .reveal section img.pedal--delay {
-    transform: translate(17rem, 0) scale(2) rotate(5deg); }
-  .reveal section img.pedal--flanger {
-    transform: translate(20rem, 0) scale(2) rotate(5deg); }
-  .reveal section img.pedal--reverb {
-    transform: translate(25rem, 0) scale(2) rotate(5deg); }
+  width: 300px; }
 
 /* Cable
  * ---------------------------------- */
@@ -488,7 +477,8 @@ body {
   position: absolute;
   left: -1rem;
   bottom: 2.5rem;
-  display: none; }
+  display: none;
+  width: 90%; }
   .cable--visible {
     display: block; }
 

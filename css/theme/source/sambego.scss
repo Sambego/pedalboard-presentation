@@ -33,9 +33,9 @@ $heading3Size: 1.1em;
 $heading4Size: 1.0em;
 
 section.has-dark-background {
-	&, h1, h2, h3, h4, h5, h6 {
-		color: #fff;
-	}
+    &, h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    }
 }
 
 
@@ -124,7 +124,7 @@ body {
     fill: none;
 
     stroke: $black;
-    stroke-width: 30px;
+    // stroke-width: 30px;
  }
 
 /* Caption
@@ -325,25 +325,26 @@ body {
 .reveal {
     section {
         img.pedal {
-            position: absolute;
-            right: 0;
-            bottom: 0;
+            width: 300px;
+            // position: absolute;
+            // right: 0;
+            // bottom: 0;
 
-            &--distortion {
-                transform: translate(25rem, 0) scale(2) rotate(5deg);
-            }
-
-            &--delay {
-                transform: translate(17rem, 0) scale(2) rotate(5deg);
-            }
-
-            &--flanger {
-                transform: translate(20rem, 0) scale(2) rotate(5deg);
-            }
-
-            &--reverb {
-                transform: translate(25rem, 0) scale(2) rotate(5deg);
-            }
+            // &--distortion {
+            //     transform: translate(25rem, 0) scale(2) rotate(5deg);
+            // }
+    //
+            // &--delay {
+            //     transform: translate(17rem, 0) scale(2) rotate(5deg);
+            // }
+    //
+            // &--flanger {
+            //     transform: translate(20rem, 0) scale(2) rotate(5deg);
+            // }
+    //
+            // &--reverb {
+            //     transform: translate(25rem, 0) scale(2) rotate(5deg);
+            // }
         }
     }
 }
@@ -356,6 +357,7 @@ body {
     bottom: 2.5rem;
 
     display: none;
+    width: 90%;
 
     &--visible {
         display: block;
